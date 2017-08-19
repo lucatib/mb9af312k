@@ -1,0 +1,2 @@
+Contains project templates for some IDE / Toolchains.
+source     contains all source files like main.c, etc.

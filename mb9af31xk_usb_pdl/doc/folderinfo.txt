@@ -1,0 +1,3 @@
+Doxygen documentation is generated here.
+Doxyfile       Doxygen configuration
+*.pin          containing pinlist of every MCU package

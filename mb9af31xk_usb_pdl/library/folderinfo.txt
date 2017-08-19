@@ -1,0 +1,7 @@
+Contains library related modules
+examples     contains examples (main.c and pdl_user.h)
+             main.c must be copied to <root>\example\source
+             pdl_user.h must be copied to <root>\example\source\config
+highlevel    contains highlevel software
+middleware   contains middleware
+lowlevel     contains lowlevel like Cypress PDL

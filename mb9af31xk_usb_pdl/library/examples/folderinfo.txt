@@ -1,0 +1,3 @@
+contains examples (main.c and pdl_user.h)
+main.c must be copied to <root>\example\source
+pdl_user.h must be copied to <root>\example\source\config

@@ -1,0 +1,2430 @@
+<Root>
+  <REG_HEADER>
+    <Title>BF283F24-70B9-4f97-86E6-0AD5BAAE9E01</Title>
+    <VersionHigh>0</VersionHigh>
+    <VersionLow>1</VersionLow>
+  </REG_HEADER>
+  <REG_ROOT>
+    <RegVer>1259163648</RegVer>
+    <Project>
+      <CompilerType>0</CompilerType>
+      <GlobalOptions>
+        <AHeaderExtension>INC</AHeaderExtension>
+        <AInpExtensions>s</AInpExtensions>
+        <AOutExtensions>o</AOutExtensions>
+        <AsmAdditionalOutExt>
+        </AsmAdditionalOutExt>
+        <AssemblerRelPath>$(CMPDIR)bin\arm-none-eabi-gcc.exe</AssemblerRelPath>
+        <BeepWhenDone>1</BeepWhenDone>
+        <CaptureTranslatorsOutputAsm>1</CaptureTranslatorsOutputAsm>
+        <CaptureTranslatorsOutputCmp>1</CaptureTranslatorsOutputCmp>
+        <CaptureTranslatorsOutputLnk>1</CaptureTranslatorsOutputLnk>
+        <ChangeWorkingDirectory>1</ChangeWorkingDirectory>
+        <CInpExtensions>c;cpp</CInpExtensions>
+        <CmpAdditionalOutExt>
+        </CmpAdditionalOutExt>
+        <CompCmdLineIncPrefix>-I</CompCmdLineIncPrefix>
+        <CompCmdLinePostfix>
+        </CompCmdLinePostfix>
+        <CompCmdLinePrefix>-D</CompCmdLinePrefix>
+        <CompilerDirectory>$(EXEDIR)gcc\arm\</CompilerDirectory>
+        <CompilerRelPath>$(CMPDIR)bin\arm-none-eabi-gcc.exe</CompilerRelPath>
+        <CopyOutputFilesToTargetDir>1</CopyOutputFilesToTargetDir>
+        <COutExtensions>o</COutExtensions>
+        <DeleteTemporalyFiles>0</DeleteTemporalyFiles>
+        <DF_AllowBlanks>True</DF_AllowBlanks>
+        <DF_CheckSourceFileFolder>True</DF_CheckSourceFileFolder>
+        <DF_End>
+        </DF_End>
+        <DF_Keyword>
+        </DF_Keyword>
+        <DF_ReqBlanks>True</DF_ReqBlanks>
+        <DF_Start>
+        </DF_Start>
+        <DF_Valid>False</DF_Valid>
+        <DisplayParameters>0</DisplayParameters>
+        <ExecutableFileName>mb9af31xk_example_178172004.elf</ExecutableFileName>
+        <ExternalMake>0</ExternalMake>
+        <ExternalMakeFile>
+        </ExternalMakeFile>
+        <ExternalMakeFileParameters>
+        </ExternalMakeFileParameters>
+        <HeaderExtension>h</HeaderExtension>
+        <LinkerRelPath>$(CMPDIR)bin\arm-none-eabi-gcc.exe</LinkerRelPath>
+        <LInpExtensions>o;a</LInpExtensions>
+        <LnkAdditionalOutExt>
+        </LnkAdditionalOutExt>
+        <NewInvoke>0</NewInvoke>
+        <PathSeparator>\</PathSeparator>
+        <RootDir>
+        </RootDir>
+        <RunAfterAsm>
+        </RunAfterAsm>
+        <RunAfterAsmParam>
+        </RunAfterAsmParam>
+        <RunAfterComp>
+        </RunAfterComp>
+        <RunAfterCompParam>
+        </RunAfterCompParam>
+        <RunAfterLinker>$(CMPDIR)bin\arm-none-eabi-objcopy.exe</RunAfterLinker>
+        <RunAfterLinkerParam>$(CMPDIR) $(OUTPUTDIR) USBDBoot 9.6</RunAfterLinkerParam>
+        <RunBeforeBuild>
+        </RunBeforeBuild>
+        <RunBeforeBuildParam>
+        </RunBeforeBuildParam>
+        <RunBeforeMake>
+        </RunBeforeMake>
+        <RunBeforeMakeParam>
+        </RunBeforeMakeParam>
+        <RunCommandInterpreterAsm>1</RunCommandInterpreterAsm>
+        <RunCommandInterpreterCmp>1</RunCommandInterpreterCmp>
+        <RunCommandInterpreterLnk>1</RunCommandInterpreterLnk>
+        <RunWithRelativePath>0</RunWithRelativePath>
+        <ShowToolWindow>0</ShowToolWindow>
+        <WarnIncludes>0</WarnIncludes>
+        <Env.0>
+          <__>
+          </__>
+        </Env.0>
+        <Env.1>
+          <__>
+          </__>
+        </Env.1>
+        <IncludePath.0>
+          <Path>$(IRFDIR)..\..\cmsis\include</Path>
+          <SubDir>0</SubDir>
+        </IncludePath.0>
+        <IncludePath.1>
+          <Path>$(IRFDIR)..\..\common</Path>
+          <SubDir>0</SubDir>
+        </IncludePath.1>
+        <IncludePath.2>
+          <Path>$(IRFDIR)..\..\library\highlevel</Path>
+          <SubDir>0</SubDir>
+        </IncludePath.2>
+        <IncludePath.3>
+          <Path>$(IRFDIR)..\..\library\middleware</Path>
+          <SubDir>0</SubDir>
+        </IncludePath.3>
+        <IncludePath.4>
+          <Path>$(IRFDIR)..\..\library\lowlevel</Path>
+          <SubDir>0</SubDir>
+        </IncludePath.4>
+        <IncludePath.5>
+          <Path>$(IRFDIR)..\..\library</Path>
+          <SubDir>0</SubDir>
+        </IncludePath.5>
+        <IncludePath.6>
+          <Path>$(IRFDIR)..\source\config</Path>
+          <SubDir>0</SubDir>
+        </IncludePath.6>
+        <IncludePath.7>
+          <Path>$(IRFDIR)..\source</Path>
+          <SubDir>1</SubDir>
+        </IncludePath.7>
+        <mbBuild>
+          <Mode>0</Mode>
+          <Options>
+          </Options>
+          <Path>
+          </Path>
+        </mbBuild>
+        <mbMake>
+          <Mode>0</Mode>
+          <Options>
+          </Options>
+          <Path>
+          </Path>
+        </mbMake>        <IncludePath.8>
+          <Path>$(IRFDIR)..\source\sk-fm3-48pmc-usbstick</Path>
+          <SubDir>0</SubDir>
+        </IncludePath.8>
+        <IncludePath.9>
+          <Path>$(IRFDIR)..\source\config\usb</Path>
+          <SubDir>0</SubDir>
+        </IncludePath.9>
+        <IncludePath.10>
+          <Path>$(IRFDIR)..\..\library\lowlevel\usb</Path>
+          <SubDir>0</SubDir>
+        </IncludePath.10>
+        <IncludePath.11>
+          <Path>$(IRFDIR)..\..\library\middleware\usb\host</Path>
+          <SubDir>0</SubDir>
+        </IncludePath.11>
+        <IncludePath.12>
+          <Path>$(IRFDIR)..\..\library\middleware\usb\device</Path>
+          <SubDir>0</SubDir>
+        </IncludePath.12>
+</GlobalOptions>
+      <Project.0>
+        <DefaultTargetName>mb9af312k_release</DefaultTargetName>
+        <FilterName>GCC</FilterName>
+        <ProjectName>
+        </ProjectName>
+        <AdvancedLinkerOptions>
+          <AsmCustomFilterName>
+          </AsmCustomFilterName>
+          <AsmUseDefaultName>True</AsmUseDefaultName>
+          <CaptureErrOutOnly>False</CaptureErrOutOnly>
+          <CmpCustomFilterName>$(NOEXT).err</CmpCustomFilterName>
+          <CmpUseDefaultName>True</CmpUseDefaultName>
+          <ExternalFilterPath>
+          </ExternalFilterPath>
+          <LinkCustomFilterName>link.err</LinkCustomFilterName>
+          <LinkUseDefaultName>True</LinkUseDefaultName>
+          <UseExternalFilter>False</UseExternalFilter>
+        </AdvancedLinkerOptions>
+        <Target.3>
+          <TargetName>MB9A312_Debug</TargetName>
+          <FileOptios>
+            <AssemblerOptions> -mcpu=cortex-m3 -mthumb -g3  -o $(OUTPUTDIR)$(NOEXT).o -c $(EDNAME)</AssemblerOptions>
+            <AssemblerOptionsWR>True</AssemblerOptionsWR>
+            <CompilerDefinesWR>True</CompilerDefinesWR>
+            <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+            <CompilerOptionsWR>True</CompilerOptionsWR>
+          </FileOptios>
+          <LinkGroup.0>
+            <LinkGroupName>common</LinkGroupName>
+            <File.0>
+              <FileName>$(IRFDIR)..\..\common\system_mb9a310k.c</FileName>
+              <FileOptios>
+                <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+              </FileOptios>
+            </File.0>
+          </LinkGroup.0>
+          <LinkGroup.1>
+            <LinkGroupName>config</LinkGroupName>
+            <File.0>
+              <FileName>$(IRFDIR)..\source\config\iomux.c</FileName>
+              <FileOptios>
+                <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+              </FileOptios>
+            </File.0>
+          </LinkGroup.1>
+          <LinkGroup.2>
+            <LinkGroupName>source</LinkGroupName>
+            <File.0>
+              <FileName>$(IRFDIR)..\source\main.c</FileName>
+              <FileOptios>
+                <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+              </FileOptios>
+            </File.0>
+            <File.1>
+              <FileName>$(IRFDIR)startup_mb9a310k.s</FileName>
+              <FileOptios>
+                <AssemblerOptions> -mcpu=cortex-m3 -mthumb -g3  -o $(OUTPUTDIR)$(NOEXT).o -c $(EDNAME)</AssemblerOptions>
+              </FileOptios>
+            </File.1>
+            <File.2>
+              <FileName>$(IRFDIR)..\..\Readme.txt</FileName>
+            </File.2>
+          </LinkGroup.2>
+          <TargetOptios>
+            <AsmArgFile>
+            </AsmArgFile>
+            <BuildOptions>
+            </BuildOptions>
+            <CompArgFile>
+            </CompArgFile>
+            <CRLF>True</CRLF>
+            <ExternalMakeFileParameters>
+            </ExternalMakeFileParameters>
+            <IndFileLocation>2</IndFileLocation>
+            <IndirectionFile>$(IRFDIR)MB9A312_ram.ld</IndirectionFile>
+            <LinkerOptions>-mthumb -mcpu=cortex-m3  -nostartfiles  -Xlinker --output=$(OUTPUTFILE)  -Xlinker  -Map=$(OUTPUTNOEXT).map  -Xlinker  --script=$(INDPATH)  -Xlinker  -n  -nostdlib  -nodefaultlibs  -fno-exceptions --specs=nano.specs -lc -lnosys -Xlinker --gc-sections</LinkerOptions>
+            <MakeOptions>
+            </MakeOptions>
+            <RunAfterLinkParam>-O srec $(OUTPUTPATH) $(OUTPUTNOEXT).srec</RunAfterLinkParam>
+            <SkipObjectCheck>False</SkipObjectCheck>
+            <TargetDirectory>debug</TargetDirectory>
+            <TargetDirectory2>mb9af31xk_debug</TargetDirectory2>
+            <TranslateCharacter>38</TranslateCharacter>
+            <UseTargetDirectory2>No</UseTargetDirectory2>
+          </TargetOptios>
+      <LinkGroup.3>
+       <LinkGroupName>source/sk-fm3-48pmc-usbstick</LinkGroupName>
+
+      
+       <File.0>
+        <FileName>$(IRFDIR)..\source\sk-fm3-48pmc-usbstick\board.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.0>
+
+       <File.1>
+        <FileName>$(IRFDIR)..\source\sk-fm3-48pmc-usbstick\board.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.1>
+
+       <File.2>
+        <FileName>$(IRFDIR)..\source\sk-fm3-48pmc-usbstick\boardconfig.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.2>
+
+       <File.3>
+        <FileName>$(IRFDIR)..\source\sk-fm3-48pmc-usbstick\boardsystick.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.3>
+
+       <File.4>
+        <FileName>$(IRFDIR)..\source\sk-fm3-48pmc-usbstick\boardsystick.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.4>
+
+       <File.5>
+        <FileName>$(IRFDIR)..\source\sk-fm3-48pmc-usbstick\button.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.5>
+
+       <File.6>
+        <FileName>$(IRFDIR)..\source\sk-fm3-48pmc-usbstick\button.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.6>
+
+       <File.7>
+        <FileName>$(IRFDIR)..\source\sk-fm3-48pmc-usbstick\led.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.7>
+
+       <File.8>
+        <FileName>$(IRFDIR)..\source\sk-fm3-48pmc-usbstick\ledpwm.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.8>
+
+       <File.9>
+        <FileName>$(IRFDIR)..\source\sk-fm3-48pmc-usbstick\ledpwm.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.9>
+
+       <File.10>
+        <FileName>$(IRFDIR)..\source\sk-fm3-48pmc-usbstick\sensoradc.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.10>
+
+       <File.11>
+        <FileName>$(IRFDIR)..\source\sk-fm3-48pmc-usbstick\sensoradc.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.11>
+
+       <File.12>
+        <FileName>$(IRFDIR)..\source\sk-fm3-48pmc-usbstick\uart.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.12>
+
+       <File.13>
+        <FileName>$(IRFDIR)..\source\sk-fm3-48pmc-usbstick\uart.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.13>
+</LinkGroup.3>
+
+      <LinkGroup.4>
+       <LinkGroupName>config/usb</LinkGroupName>
+
+      
+       <File.0>
+        <FileName>$(IRFDIR)..\source\config\usb\UsbConfig.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.0>
+
+       <File.1>
+        <FileName>$(IRFDIR)..\source\config\usb\usbdescriptors.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.1>
+
+       <File.2>
+        <FileName>$(IRFDIR)..\source\config\usb\usbdevicehw.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.2>
+
+       <File.3>
+        <FileName>$(IRFDIR)..\source\config\usb\usbhosthw.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.3>
+
+       <File.4>
+        <FileName>$(IRFDIR)..\source\config\usb\usbconfig.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.4>
+</LinkGroup.4>
+
+      <LinkGroup.5>
+       <LinkGroupName>library/lowlevel</LinkGroupName>
+
+      
+       <File.0>
+        <FileName>$(IRFDIR)..\..\library\lowlevel\usb\usb.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.0>
+
+       <File.1>
+        <FileName>$(IRFDIR)..\..\library\lowlevel\usb\usb.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.1>
+
+       <File.2>
+        <FileName>$(IRFDIR)..\..\library\lowlevel\usb\usbdevice.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.2>
+
+       <File.3>
+        <FileName>$(IRFDIR)..\..\library\lowlevel\usb\usbdevice.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.3>
+
+       <File.4>
+        <FileName>$(IRFDIR)..\..\library\lowlevel\usb\usbethernetclock.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.4>
+
+       <File.5>
+        <FileName>$(IRFDIR)..\..\library\lowlevel\usb\usbethernetclock.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.5>
+
+       <File.6>
+        <FileName>$(IRFDIR)..\..\library\lowlevel\usb\usbethernetclocklegacy.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.6>
+
+       <File.7>
+        <FileName>$(IRFDIR)..\..\library\lowlevel\usb\usbhost.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.7>
+
+       <File.8>
+        <FileName>$(IRFDIR)..\..\library\lowlevel\usb\usbhost.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.8>
+
+       <File.9>
+        <FileName>$(IRFDIR)..\..\library\lowlevel\usb\usblegacy.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.9>
+</LinkGroup.5>
+
+      <LinkGroup.6>
+       <LinkGroupName>library/middleware</LinkGroupName>
+
+      
+       <File.0>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\host\UsbHostClassDriverTable.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.0>
+
+       <File.1>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\host\UsbHostClassSupervisor.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.1>
+
+       <File.2>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\host\usbhostclasssupervisor.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.2>
+
+       <File.3>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\host\UsbHostHidCom.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.3>
+
+       <File.4>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\host\usbhosthidcom.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.4>
+
+       <File.5>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\host\UsbHostHidKeyboard.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.5>
+
+       <File.6>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\host\UsbHostHidKeyboard.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.6>
+
+       <File.7>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\host\UsbHostHidMouse.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.7>
+
+       <File.8>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\host\UsbHostHidMouse.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.8>
+
+       <File.9>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\host\UsbHostMassStorage.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.9>
+
+       <File.10>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\host\UsbHostMassStorage.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.10>
+
+       <File.11>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\host\UsbHostNdis.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.11>
+
+       <File.12>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\host\UsbHostNdis.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.12>
+
+       <File.13>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\host\UsbHostPrinter.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.13>
+
+       <File.14>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\host\UsbHostPrinter.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.14>
+
+       <File.15>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\device\UsbDeviceCdcCom.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.15>
+
+       <File.16>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\device\UsbDeviceCdcCom.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.16>
+
+       <File.17>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\device\UsbDeviceCmsisDap.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.17>
+
+       <File.18>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\device\UsbDeviceCmsisDap.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.18>
+
+       <File.19>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\device\UsbDeviceHidCom.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.19>
+
+       <File.20>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\device\UsbDeviceHidCom.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.20>
+
+       <File.21>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\device\UsbDeviceHidJoystick.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.21>
+
+       <File.22>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\device\UsbDeviceHidJoystick.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.22>
+
+       <File.23>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\device\UsbDeviceHidKeyboard.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.23>
+
+       <File.24>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\device\UsbDeviceHidKeyboard.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.24>
+
+       <File.25>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\device\UsbDeviceHidMouse.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.25>
+
+       <File.26>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\device\UsbDeviceHidMouse.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.26>
+
+       <File.27>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\device\UsbDeviceLibUsb.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.27>
+
+       <File.28>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\device\UsbDeviceLibUsb.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.28>
+
+       <File.29>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\device\UsbDeviceMassStorage.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.29>
+
+       <File.30>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\device\UsbDeviceMassStorage.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.30>
+
+       <File.31>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\device\UsbDevicePrinter.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.31>
+
+       <File.32>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\device\UsbDevicePrinter.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.32>
+</LinkGroup.6>
+</Target.3>
+        <Target.2>
+          <TargetName>MB9A312_Release</TargetName>
+          <FileOptios>
+            <AssemblerOptions> -mcpu=cortex-m3 -mthumb -g3  -o $(OUTPUTDIR)$(NOEXT).o -c $(EDNAME)</AssemblerOptions>
+            <AssemblerOptionsWR>True</AssemblerOptionsWR>
+            <CompilerDefinesWR>True</CompilerDefinesWR>
+            <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+            <CompilerOptionsWR>True</CompilerOptionsWR>
+          </FileOptios>
+          <LinkGroup.0>
+            <LinkGroupName>common</LinkGroupName>
+            <File.0>
+              <FileName>$(IRFDIR)..\..\common\system_mb9a310k.c</FileName>
+              <FileOptios>
+                <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+              </FileOptios>
+            </File.0>
+          </LinkGroup.0>
+          <LinkGroup.1>
+            <LinkGroupName>config</LinkGroupName>
+            <File.0>
+              <FileName>$(IRFDIR)..\source\config\iomux.c</FileName>
+              <FileOptios>
+                <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+              </FileOptios>
+            </File.0>
+          </LinkGroup.1>
+          <LinkGroup.2>
+            <LinkGroupName>source</LinkGroupName>
+            <File.0>
+              <FileName>$(IRFDIR)..\source\main.c</FileName>
+              <FileOptios>
+                <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+              </FileOptios>
+            </File.0>
+            <File.1>
+              <FileName>$(IRFDIR)startup_mb9a310k.s</FileName>
+              <FileOptios>
+                <AssemblerOptions> -mcpu=cortex-m3 -mthumb -g3  -o $(OUTPUTDIR)$(NOEXT).o -c $(EDNAME)</AssemblerOptions>
+              </FileOptios>
+            </File.1>
+            <File.2>
+              <FileName>$(IRFDIR)..\..\Readme.txt</FileName>
+            </File.2>
+          </LinkGroup.2>
+          <TargetOptios>
+            <AsmArgFile>
+            </AsmArgFile>
+            <BuildOptions>
+            </BuildOptions>
+            <CompArgFile>
+            </CompArgFile>
+            <CRLF>True</CRLF>
+            <ExternalMakeFileParameters>
+            </ExternalMakeFileParameters>
+            <IndFileLocation>2</IndFileLocation>
+            <IndirectionFile>$(IRFDIR)MB9A312_rom.ld</IndirectionFile>
+            <LinkerOptions>-mthumb -mcpu=cortex-m3  -nostartfiles  -Xlinker --output=$(OUTPUTFILE)  -Xlinker  -Map=$(OUTPUTNOEXT).map  -Xlinker  --script=$(INDPATH)  -Xlinker  -n  -nostdlib  -nodefaultlibs  -fno-exceptions --specs=nano.specs -lc -lnosys -Xlinker --gc-sections</LinkerOptions>
+            <MakeOptions>
+            </MakeOptions>
+            <RunAfterLinkParam>-O srec $(OUTPUTPATH) $(OUTPUTNOEXT).srec</RunAfterLinkParam>
+            <SkipObjectCheck>False</SkipObjectCheck>
+            <TargetDirectory>release</TargetDirectory>
+            <TargetDirectory2>mb9af31xk_release</TargetDirectory2>
+            <TranslateCharacter>38</TranslateCharacter>
+            <UseTargetDirectory2>No</UseTargetDirectory2>
+          </TargetOptios>
+      <LinkGroup.3>
+       <LinkGroupName>source/sk-fm3-48pmc-usbstick</LinkGroupName>
+
+      
+       <File.0>
+        <FileName>$(IRFDIR)..\source\sk-fm3-48pmc-usbstick\board.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.0>
+
+       <File.1>
+        <FileName>$(IRFDIR)..\source\sk-fm3-48pmc-usbstick\board.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.1>
+
+       <File.2>
+        <FileName>$(IRFDIR)..\source\sk-fm3-48pmc-usbstick\boardconfig.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.2>
+
+       <File.3>
+        <FileName>$(IRFDIR)..\source\sk-fm3-48pmc-usbstick\boardsystick.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.3>
+
+       <File.4>
+        <FileName>$(IRFDIR)..\source\sk-fm3-48pmc-usbstick\boardsystick.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.4>
+
+       <File.5>
+        <FileName>$(IRFDIR)..\source\sk-fm3-48pmc-usbstick\button.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.5>
+
+       <File.6>
+        <FileName>$(IRFDIR)..\source\sk-fm3-48pmc-usbstick\button.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.6>
+
+       <File.7>
+        <FileName>$(IRFDIR)..\source\sk-fm3-48pmc-usbstick\led.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.7>
+
+       <File.8>
+        <FileName>$(IRFDIR)..\source\sk-fm3-48pmc-usbstick\ledpwm.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.8>
+
+       <File.9>
+        <FileName>$(IRFDIR)..\source\sk-fm3-48pmc-usbstick\ledpwm.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.9>
+
+       <File.10>
+        <FileName>$(IRFDIR)..\source\sk-fm3-48pmc-usbstick\sensoradc.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.10>
+
+       <File.11>
+        <FileName>$(IRFDIR)..\source\sk-fm3-48pmc-usbstick\sensoradc.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.11>
+
+       <File.12>
+        <FileName>$(IRFDIR)..\source\sk-fm3-48pmc-usbstick\uart.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.12>
+
+       <File.13>
+        <FileName>$(IRFDIR)..\source\sk-fm3-48pmc-usbstick\uart.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.13>
+</LinkGroup.3>
+
+      <LinkGroup.4>
+       <LinkGroupName>config/usb</LinkGroupName>
+
+      
+       <File.0>
+        <FileName>$(IRFDIR)..\source\config\usb\UsbConfig.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.0>
+
+       <File.1>
+        <FileName>$(IRFDIR)..\source\config\usb\usbdescriptors.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.1>
+
+       <File.2>
+        <FileName>$(IRFDIR)..\source\config\usb\usbdevicehw.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.2>
+
+       <File.3>
+        <FileName>$(IRFDIR)..\source\config\usb\usbhosthw.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.3>
+
+       <File.4>
+        <FileName>$(IRFDIR)..\source\config\usb\usbconfig.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.4>
+</LinkGroup.4>
+
+      <LinkGroup.5>
+       <LinkGroupName>library/lowlevel</LinkGroupName>
+
+      
+       <File.0>
+        <FileName>$(IRFDIR)..\..\library\lowlevel\usb\usb.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.0>
+
+       <File.1>
+        <FileName>$(IRFDIR)..\..\library\lowlevel\usb\usb.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.1>
+
+       <File.2>
+        <FileName>$(IRFDIR)..\..\library\lowlevel\usb\usbdevice.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.2>
+
+       <File.3>
+        <FileName>$(IRFDIR)..\..\library\lowlevel\usb\usbdevice.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.3>
+
+       <File.4>
+        <FileName>$(IRFDIR)..\..\library\lowlevel\usb\usbethernetclock.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.4>
+
+       <File.5>
+        <FileName>$(IRFDIR)..\..\library\lowlevel\usb\usbethernetclock.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.5>
+
+       <File.6>
+        <FileName>$(IRFDIR)..\..\library\lowlevel\usb\usbethernetclocklegacy.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.6>
+
+       <File.7>
+        <FileName>$(IRFDIR)..\..\library\lowlevel\usb\usbhost.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.7>
+
+       <File.8>
+        <FileName>$(IRFDIR)..\..\library\lowlevel\usb\usbhost.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.8>
+
+       <File.9>
+        <FileName>$(IRFDIR)..\..\library\lowlevel\usb\usblegacy.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.9>
+</LinkGroup.5>
+
+      <LinkGroup.6>
+       <LinkGroupName>library/middleware</LinkGroupName>
+
+      
+       <File.0>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\host\UsbHostClassDriverTable.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.0>
+
+       <File.1>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\host\UsbHostClassSupervisor.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.1>
+
+       <File.2>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\host\usbhostclasssupervisor.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.2>
+
+       <File.3>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\host\UsbHostHidCom.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.3>
+
+       <File.4>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\host\usbhosthidcom.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.4>
+
+       <File.5>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\host\UsbHostHidKeyboard.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.5>
+
+       <File.6>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\host\UsbHostHidKeyboard.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.6>
+
+       <File.7>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\host\UsbHostHidMouse.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.7>
+
+       <File.8>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\host\UsbHostHidMouse.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.8>
+
+       <File.9>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\host\UsbHostMassStorage.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.9>
+
+       <File.10>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\host\UsbHostMassStorage.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.10>
+
+       <File.11>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\host\UsbHostNdis.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.11>
+
+       <File.12>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\host\UsbHostNdis.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.12>
+
+       <File.13>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\host\UsbHostPrinter.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.13>
+
+       <File.14>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\host\UsbHostPrinter.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.14>
+
+       <File.15>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\device\UsbDeviceCdcCom.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.15>
+
+       <File.16>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\device\UsbDeviceCdcCom.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.16>
+
+       <File.17>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\device\UsbDeviceCmsisDap.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.17>
+
+       <File.18>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\device\UsbDeviceCmsisDap.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.18>
+
+       <File.19>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\device\UsbDeviceHidCom.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.19>
+
+       <File.20>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\device\UsbDeviceHidCom.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.20>
+
+       <File.21>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\device\UsbDeviceHidJoystick.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.21>
+
+       <File.22>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\device\UsbDeviceHidJoystick.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.22>
+
+       <File.23>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\device\UsbDeviceHidKeyboard.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.23>
+
+       <File.24>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\device\UsbDeviceHidKeyboard.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.24>
+
+       <File.25>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\device\UsbDeviceHidMouse.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.25>
+
+       <File.26>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\device\UsbDeviceHidMouse.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.26>
+
+       <File.27>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\device\UsbDeviceLibUsb.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.27>
+
+       <File.28>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\device\UsbDeviceLibUsb.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.28>
+
+       <File.29>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\device\UsbDeviceMassStorage.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.29>
+
+       <File.30>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\device\UsbDeviceMassStorage.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.30>
+
+       <File.31>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\device\UsbDevicePrinter.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.31>
+
+       <File.32>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\device\UsbDevicePrinter.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.32>
+</LinkGroup.6>
+</Target.2>
+        <Target.1>
+          <TargetName>MB9A311_Debug</TargetName>
+          <FileOptios>
+            <AssemblerOptions> -mcpu=cortex-m3 -mthumb -g3  -o $(OUTPUTDIR)$(NOEXT).o -c $(EDNAME)</AssemblerOptions>
+            <AssemblerOptionsWR>True</AssemblerOptionsWR>
+            <CompilerDefinesWR>True</CompilerDefinesWR>
+            <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+            <CompilerOptionsWR>True</CompilerOptionsWR>
+          </FileOptios>
+          <LinkGroup.0>
+            <LinkGroupName>common</LinkGroupName>
+            <File.0>
+              <FileName>$(IRFDIR)..\..\common\system_mb9a310k.c</FileName>
+              <FileOptios>
+                <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+              </FileOptios>
+            </File.0>
+          </LinkGroup.0>
+          <LinkGroup.1>
+            <LinkGroupName>config</LinkGroupName>
+            <File.0>
+              <FileName>$(IRFDIR)..\source\config\iomux.c</FileName>
+              <FileOptios>
+                <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+              </FileOptios>
+            </File.0>
+          </LinkGroup.1>
+          <LinkGroup.2>
+            <LinkGroupName>source</LinkGroupName>
+            <File.0>
+              <FileName>$(IRFDIR)..\source\main.c</FileName>
+              <FileOptios>
+                <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+              </FileOptios>
+            </File.0>
+            <File.1>
+              <FileName>$(IRFDIR)startup_mb9a310k.s</FileName>
+              <FileOptios>
+                <AssemblerOptions> -mcpu=cortex-m3 -mthumb -g3  -o $(OUTPUTDIR)$(NOEXT).o -c $(EDNAME)</AssemblerOptions>
+              </FileOptios>
+            </File.1>
+            <File.2>
+              <FileName>$(IRFDIR)..\..\Readme.txt</FileName>
+            </File.2>
+          </LinkGroup.2>
+          <TargetOptios>
+            <AsmArgFile>
+            </AsmArgFile>
+            <BuildOptions>
+            </BuildOptions>
+            <CompArgFile>
+            </CompArgFile>
+            <CRLF>True</CRLF>
+            <ExternalMakeFileParameters>
+            </ExternalMakeFileParameters>
+            <IndFileLocation>2</IndFileLocation>
+            <IndirectionFile>$(IRFDIR)MB9A311_ram.ld</IndirectionFile>
+            <LinkerOptions>-mthumb -mcpu=cortex-m3  -nostartfiles  -Xlinker --output=$(OUTPUTFILE)  -Xlinker  -Map=$(OUTPUTNOEXT).map  -Xlinker  --script=$(INDPATH)  -Xlinker  -n  -nostdlib  -nodefaultlibs  -fno-exceptions --specs=nano.specs -lc -lnosys -Xlinker --gc-sections</LinkerOptions>
+            <MakeOptions>
+            </MakeOptions>
+            <RunAfterLinkParam>-O srec $(OUTPUTPATH) $(OUTPUTNOEXT).srec</RunAfterLinkParam>
+            <SkipObjectCheck>False</SkipObjectCheck>
+            <TargetDirectory>debug</TargetDirectory>
+            <TargetDirectory2>mb9af31xk_debug</TargetDirectory2>
+            <TranslateCharacter>38</TranslateCharacter>
+            <UseTargetDirectory2>No</UseTargetDirectory2>
+          </TargetOptios>
+      <LinkGroup.3>
+       <LinkGroupName>source/sk-fm3-48pmc-usbstick</LinkGroupName>
+
+      
+       <File.0>
+        <FileName>$(IRFDIR)..\source\sk-fm3-48pmc-usbstick\board.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.0>
+
+       <File.1>
+        <FileName>$(IRFDIR)..\source\sk-fm3-48pmc-usbstick\board.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.1>
+
+       <File.2>
+        <FileName>$(IRFDIR)..\source\sk-fm3-48pmc-usbstick\boardconfig.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.2>
+
+       <File.3>
+        <FileName>$(IRFDIR)..\source\sk-fm3-48pmc-usbstick\boardsystick.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.3>
+
+       <File.4>
+        <FileName>$(IRFDIR)..\source\sk-fm3-48pmc-usbstick\boardsystick.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.4>
+
+       <File.5>
+        <FileName>$(IRFDIR)..\source\sk-fm3-48pmc-usbstick\button.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.5>
+
+       <File.6>
+        <FileName>$(IRFDIR)..\source\sk-fm3-48pmc-usbstick\button.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.6>
+
+       <File.7>
+        <FileName>$(IRFDIR)..\source\sk-fm3-48pmc-usbstick\led.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.7>
+
+       <File.8>
+        <FileName>$(IRFDIR)..\source\sk-fm3-48pmc-usbstick\ledpwm.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.8>
+
+       <File.9>
+        <FileName>$(IRFDIR)..\source\sk-fm3-48pmc-usbstick\ledpwm.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.9>
+
+       <File.10>
+        <FileName>$(IRFDIR)..\source\sk-fm3-48pmc-usbstick\sensoradc.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.10>
+
+       <File.11>
+        <FileName>$(IRFDIR)..\source\sk-fm3-48pmc-usbstick\sensoradc.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.11>
+
+       <File.12>
+        <FileName>$(IRFDIR)..\source\sk-fm3-48pmc-usbstick\uart.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.12>
+
+       <File.13>
+        <FileName>$(IRFDIR)..\source\sk-fm3-48pmc-usbstick\uart.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.13>
+</LinkGroup.3>
+
+      <LinkGroup.4>
+       <LinkGroupName>config/usb</LinkGroupName>
+
+      
+       <File.0>
+        <FileName>$(IRFDIR)..\source\config\usb\UsbConfig.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.0>
+
+       <File.1>
+        <FileName>$(IRFDIR)..\source\config\usb\usbdescriptors.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.1>
+
+       <File.2>
+        <FileName>$(IRFDIR)..\source\config\usb\usbdevicehw.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.2>
+
+       <File.3>
+        <FileName>$(IRFDIR)..\source\config\usb\usbhosthw.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.3>
+
+       <File.4>
+        <FileName>$(IRFDIR)..\source\config\usb\usbconfig.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.4>
+</LinkGroup.4>
+
+      <LinkGroup.5>
+       <LinkGroupName>library/lowlevel</LinkGroupName>
+
+      
+       <File.0>
+        <FileName>$(IRFDIR)..\..\library\lowlevel\usb\usb.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.0>
+
+       <File.1>
+        <FileName>$(IRFDIR)..\..\library\lowlevel\usb\usb.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.1>
+
+       <File.2>
+        <FileName>$(IRFDIR)..\..\library\lowlevel\usb\usbdevice.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.2>
+
+       <File.3>
+        <FileName>$(IRFDIR)..\..\library\lowlevel\usb\usbdevice.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.3>
+
+       <File.4>
+        <FileName>$(IRFDIR)..\..\library\lowlevel\usb\usbethernetclock.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.4>
+
+       <File.5>
+        <FileName>$(IRFDIR)..\..\library\lowlevel\usb\usbethernetclock.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.5>
+
+       <File.6>
+        <FileName>$(IRFDIR)..\..\library\lowlevel\usb\usbethernetclocklegacy.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.6>
+
+       <File.7>
+        <FileName>$(IRFDIR)..\..\library\lowlevel\usb\usbhost.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.7>
+
+       <File.8>
+        <FileName>$(IRFDIR)..\..\library\lowlevel\usb\usbhost.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.8>
+
+       <File.9>
+        <FileName>$(IRFDIR)..\..\library\lowlevel\usb\usblegacy.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.9>
+</LinkGroup.5>
+
+      <LinkGroup.6>
+       <LinkGroupName>library/middleware</LinkGroupName>
+
+      
+       <File.0>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\host\UsbHostClassDriverTable.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.0>
+
+       <File.1>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\host\UsbHostClassSupervisor.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.1>
+
+       <File.2>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\host\usbhostclasssupervisor.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.2>
+
+       <File.3>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\host\UsbHostHidCom.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.3>
+
+       <File.4>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\host\usbhosthidcom.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.4>
+
+       <File.5>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\host\UsbHostHidKeyboard.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.5>
+
+       <File.6>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\host\UsbHostHidKeyboard.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.6>
+
+       <File.7>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\host\UsbHostHidMouse.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.7>
+
+       <File.8>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\host\UsbHostHidMouse.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.8>
+
+       <File.9>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\host\UsbHostMassStorage.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.9>
+
+       <File.10>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\host\UsbHostMassStorage.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.10>
+
+       <File.11>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\host\UsbHostNdis.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.11>
+
+       <File.12>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\host\UsbHostNdis.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.12>
+
+       <File.13>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\host\UsbHostPrinter.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.13>
+
+       <File.14>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\host\UsbHostPrinter.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.14>
+
+       <File.15>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\device\UsbDeviceCdcCom.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.15>
+
+       <File.16>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\device\UsbDeviceCdcCom.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.16>
+
+       <File.17>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\device\UsbDeviceCmsisDap.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.17>
+
+       <File.18>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\device\UsbDeviceCmsisDap.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.18>
+
+       <File.19>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\device\UsbDeviceHidCom.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.19>
+
+       <File.20>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\device\UsbDeviceHidCom.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.20>
+
+       <File.21>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\device\UsbDeviceHidJoystick.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.21>
+
+       <File.22>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\device\UsbDeviceHidJoystick.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.22>
+
+       <File.23>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\device\UsbDeviceHidKeyboard.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.23>
+
+       <File.24>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\device\UsbDeviceHidKeyboard.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.24>
+
+       <File.25>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\device\UsbDeviceHidMouse.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.25>
+
+       <File.26>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\device\UsbDeviceHidMouse.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.26>
+
+       <File.27>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\device\UsbDeviceLibUsb.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.27>
+
+       <File.28>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\device\UsbDeviceLibUsb.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.28>
+
+       <File.29>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\device\UsbDeviceMassStorage.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.29>
+
+       <File.30>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\device\UsbDeviceMassStorage.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.30>
+
+       <File.31>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\device\UsbDevicePrinter.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.31>
+
+       <File.32>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\device\UsbDevicePrinter.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.32>
+</LinkGroup.6>
+</Target.1>
+        <Target.0>
+          <TargetName>MB9A311_Release</TargetName>
+          <FileOptios>
+            <AssemblerOptions> -mcpu=cortex-m3 -mthumb -g3  -o $(OUTPUTDIR)$(NOEXT).o -c $(EDNAME)</AssemblerOptions>
+            <AssemblerOptionsWR>True</AssemblerOptionsWR>
+            <CompilerDefinesWR>True</CompilerDefinesWR>
+            <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+            <CompilerOptionsWR>True</CompilerOptionsWR>
+          </FileOptios>
+          <LinkGroup.0>
+            <LinkGroupName>common</LinkGroupName>
+            <File.0>
+              <FileName>$(IRFDIR)..\..\common\system_mb9a310k.c</FileName>
+              <FileOptios>
+                <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+              </FileOptios>
+            </File.0>
+          </LinkGroup.0>
+          <LinkGroup.1>
+            <LinkGroupName>config</LinkGroupName>
+            <File.0>
+              <FileName>$(IRFDIR)..\source\config\iomux.c</FileName>
+              <FileOptios>
+                <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+              </FileOptios>
+            </File.0>
+          </LinkGroup.1>
+          <LinkGroup.2>
+            <LinkGroupName>source</LinkGroupName>
+            <File.0>
+              <FileName>$(IRFDIR)..\source\main.c</FileName>
+              <FileOptios>
+                <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+              </FileOptios>
+            </File.0>
+            <File.1>
+              <FileName>$(IRFDIR)startup_mb9a310k.s</FileName>
+              <FileOptios>
+                <AssemblerOptions> -mcpu=cortex-m3 -mthumb -g3  -o $(OUTPUTDIR)$(NOEXT).o -c $(EDNAME)</AssemblerOptions>
+              </FileOptios>
+            </File.1>
+            <File.2>
+              <FileName>$(IRFDIR)..\..\Readme.txt</FileName>
+            </File.2>
+          </LinkGroup.2>
+          <TargetOptios>
+            <AsmArgFile>
+            </AsmArgFile>
+            <BuildOptions>
+            </BuildOptions>
+            <CompArgFile>
+            </CompArgFile>
+            <CRLF>True</CRLF>
+            <ExternalMakeFileParameters>
+            </ExternalMakeFileParameters>
+            <IndFileLocation>2</IndFileLocation>
+            <IndirectionFile>$(IRFDIR)MB9A311_rom.ld</IndirectionFile>
+            <LinkerOptions>-mthumb -mcpu=cortex-m3  -nostartfiles  -Xlinker --output=$(OUTPUTFILE)  -Xlinker  -Map=$(OUTPUTNOEXT).map  -Xlinker  --script=$(INDPATH)  -Xlinker  -n  -nostdlib  -nodefaultlibs  -fno-exceptions --specs=nano.specs -lc -lnosys -Xlinker --gc-sections</LinkerOptions>
+            <MakeOptions>
+            </MakeOptions>
+            <RunAfterLinkParam>-O srec $(OUTPUTPATH) $(OUTPUTNOEXT).srec</RunAfterLinkParam>
+            <SkipObjectCheck>False</SkipObjectCheck>
+            <TargetDirectory>release</TargetDirectory>
+            <TargetDirectory2>mb9af31xk_release</TargetDirectory2>
+            <TranslateCharacter>38</TranslateCharacter>
+            <UseTargetDirectory2>No</UseTargetDirectory2>
+          </TargetOptios>
+      <LinkGroup.3>
+       <LinkGroupName>source/sk-fm3-48pmc-usbstick</LinkGroupName>
+
+      
+       <File.0>
+        <FileName>$(IRFDIR)..\source\sk-fm3-48pmc-usbstick\board.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.0>
+
+       <File.1>
+        <FileName>$(IRFDIR)..\source\sk-fm3-48pmc-usbstick\board.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.1>
+
+       <File.2>
+        <FileName>$(IRFDIR)..\source\sk-fm3-48pmc-usbstick\boardconfig.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.2>
+
+       <File.3>
+        <FileName>$(IRFDIR)..\source\sk-fm3-48pmc-usbstick\boardsystick.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.3>
+
+       <File.4>
+        <FileName>$(IRFDIR)..\source\sk-fm3-48pmc-usbstick\boardsystick.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.4>
+
+       <File.5>
+        <FileName>$(IRFDIR)..\source\sk-fm3-48pmc-usbstick\button.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.5>
+
+       <File.6>
+        <FileName>$(IRFDIR)..\source\sk-fm3-48pmc-usbstick\button.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.6>
+
+       <File.7>
+        <FileName>$(IRFDIR)..\source\sk-fm3-48pmc-usbstick\led.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.7>
+
+       <File.8>
+        <FileName>$(IRFDIR)..\source\sk-fm3-48pmc-usbstick\ledpwm.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.8>
+
+       <File.9>
+        <FileName>$(IRFDIR)..\source\sk-fm3-48pmc-usbstick\ledpwm.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.9>
+
+       <File.10>
+        <FileName>$(IRFDIR)..\source\sk-fm3-48pmc-usbstick\sensoradc.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.10>
+
+       <File.11>
+        <FileName>$(IRFDIR)..\source\sk-fm3-48pmc-usbstick\sensoradc.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.11>
+
+       <File.12>
+        <FileName>$(IRFDIR)..\source\sk-fm3-48pmc-usbstick\uart.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.12>
+
+       <File.13>
+        <FileName>$(IRFDIR)..\source\sk-fm3-48pmc-usbstick\uart.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.13>
+</LinkGroup.3>
+
+      <LinkGroup.4>
+       <LinkGroupName>config/usb</LinkGroupName>
+
+      
+       <File.0>
+        <FileName>$(IRFDIR)..\source\config\usb\UsbConfig.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.0>
+
+       <File.1>
+        <FileName>$(IRFDIR)..\source\config\usb\usbdescriptors.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.1>
+
+       <File.2>
+        <FileName>$(IRFDIR)..\source\config\usb\usbdevicehw.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.2>
+
+       <File.3>
+        <FileName>$(IRFDIR)..\source\config\usb\usbhosthw.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.3>
+
+       <File.4>
+        <FileName>$(IRFDIR)..\source\config\usb\usbconfig.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.4>
+</LinkGroup.4>
+
+      <LinkGroup.5>
+       <LinkGroupName>library/lowlevel</LinkGroupName>
+
+      
+       <File.0>
+        <FileName>$(IRFDIR)..\..\library\lowlevel\usb\usb.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.0>
+
+       <File.1>
+        <FileName>$(IRFDIR)..\..\library\lowlevel\usb\usb.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.1>
+
+       <File.2>
+        <FileName>$(IRFDIR)..\..\library\lowlevel\usb\usbdevice.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.2>
+
+       <File.3>
+        <FileName>$(IRFDIR)..\..\library\lowlevel\usb\usbdevice.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.3>
+
+       <File.4>
+        <FileName>$(IRFDIR)..\..\library\lowlevel\usb\usbethernetclock.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.4>
+
+       <File.5>
+        <FileName>$(IRFDIR)..\..\library\lowlevel\usb\usbethernetclock.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.5>
+
+       <File.6>
+        <FileName>$(IRFDIR)..\..\library\lowlevel\usb\usbethernetclocklegacy.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.6>
+
+       <File.7>
+        <FileName>$(IRFDIR)..\..\library\lowlevel\usb\usbhost.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.7>
+
+       <File.8>
+        <FileName>$(IRFDIR)..\..\library\lowlevel\usb\usbhost.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.8>
+
+       <File.9>
+        <FileName>$(IRFDIR)..\..\library\lowlevel\usb\usblegacy.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.9>
+</LinkGroup.5>
+
+      <LinkGroup.6>
+       <LinkGroupName>library/middleware</LinkGroupName>
+
+      
+       <File.0>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\host\UsbHostClassDriverTable.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.0>
+
+       <File.1>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\host\UsbHostClassSupervisor.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.1>
+
+       <File.2>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\host\usbhostclasssupervisor.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.2>
+
+       <File.3>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\host\UsbHostHidCom.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.3>
+
+       <File.4>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\host\usbhosthidcom.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.4>
+
+       <File.5>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\host\UsbHostHidKeyboard.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.5>
+
+       <File.6>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\host\UsbHostHidKeyboard.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.6>
+
+       <File.7>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\host\UsbHostHidMouse.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.7>
+
+       <File.8>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\host\UsbHostHidMouse.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.8>
+
+       <File.9>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\host\UsbHostMassStorage.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.9>
+
+       <File.10>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\host\UsbHostMassStorage.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.10>
+
+       <File.11>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\host\UsbHostNdis.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.11>
+
+       <File.12>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\host\UsbHostNdis.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.12>
+
+       <File.13>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\host\UsbHostPrinter.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.13>
+
+       <File.14>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\host\UsbHostPrinter.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.14>
+
+       <File.15>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\device\UsbDeviceCdcCom.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.15>
+
+       <File.16>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\device\UsbDeviceCdcCom.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.16>
+
+       <File.17>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\device\UsbDeviceCmsisDap.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.17>
+
+       <File.18>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\device\UsbDeviceCmsisDap.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.18>
+
+       <File.19>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\device\UsbDeviceHidCom.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.19>
+
+       <File.20>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\device\UsbDeviceHidCom.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.20>
+
+       <File.21>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\device\UsbDeviceHidJoystick.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.21>
+
+       <File.22>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\device\UsbDeviceHidJoystick.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.22>
+
+       <File.23>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\device\UsbDeviceHidKeyboard.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.23>
+
+       <File.24>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\device\UsbDeviceHidKeyboard.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.24>
+
+       <File.25>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\device\UsbDeviceHidMouse.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.25>
+
+       <File.26>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\device\UsbDeviceHidMouse.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.26>
+
+       <File.27>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\device\UsbDeviceLibUsb.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.27>
+
+       <File.28>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\device\UsbDeviceLibUsb.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.28>
+
+       <File.29>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\device\UsbDeviceMassStorage.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.29>
+
+       <File.30>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\device\UsbDeviceMassStorage.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.30>
+
+       <File.31>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\device\UsbDevicePrinter.c</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+        </FileOptios>
+       </File.31>
+
+       <File.32>
+        <FileName>$(IRFDIR)..\..\library\middleware\usb\device\UsbDevicePrinter.h</FileName>
+        <FileOptios>
+          <CompilerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</CompilerOptions>
+          <AssemblerOptions>-x c   -mcpu=cortex-m3  -mthumb $(DEFINES) $(INCLUDES)  -g3 -c -I $(IRFDIR) -o $(NOEXT).o $(EDNAME)</AssemblerOptions>
+        </FileOptios>
+       </File.32>
+</LinkGroup.6>
+</Target.0>
+        <TargetOptions>
+          <AsmArgFile>
+          </AsmArgFile>
+          <BuildOptions>
+          </BuildOptions>
+          <CompArgFile>
+          </CompArgFile>
+          <CRLF>False</CRLF>
+          <ExternalMakeFileParameters>
+          </ExternalMakeFileParameters>
+          <IndFileLocation>0</IndFileLocation>
+          <IndirectionFile>
+          </IndirectionFile>
+          <LinkerOptions>
+          </LinkerOptions>
+          <MakeOptions>
+          </MakeOptions>
+          <RunAfterLinkParam>$(CMPDIR) $(OUTPUTDIR) USBDBoot 9.6</RunAfterLinkParam>
+          <SkipObjectCheck>False</SkipObjectCheck>
+          <TargetDirectory>
+          </TargetDirectory>
+          <TargetDirectory2>
+          </TargetDirectory2>
+          <TranslateCharacter>38</TranslateCharacter>
+          <UseTargetDirectory2>No</UseTargetDirectory2>
+        </TargetOptions>
+      </Project.0>
+    </Project>
+  </REG_ROOT>
+</Root>

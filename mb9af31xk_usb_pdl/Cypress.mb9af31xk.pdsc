@@ -1,0 +1,227 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<package schemaVersion="1.2" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="PACK.xsd">
+  <vendor>Cypress</vendor>
+  <url>http://www.cypress.com/software/cmsis_packs</url>
+  <name>mb9af31xk</name>
+  <description>Cypress MB9A310K Series support for K package</description>
+  <releases>
+    <release version="2.0.0" date="30.06.2015 10:00:00">MSCH/ACEH;New MCU Template / Package release, replacing MCU templates before v20</release>
+    <release version="2.0.1" date="03.08.2015 03:46:11">MSCH;Updated generation script to fix FPU and MPU usage for ARM MDK</release>
+    <release version="2.0.2" date="18.08.2015 02:42:33">NOSU;Updated SVD files to improve compatibility with register/bit definitions of MCU templates before v20
+Removed HDMICEC related definitions in S6E2Cx series
+Fixed the folder structure descriptions in Readme.txt</release>
+    <release version="2.1.0" date="11.3.2016 17:44:36">MISH;Updated Merged and Clean ALL FM3 Series PDSC Files</release>
+    <release version="2.1.1" date="15.3.2016 14:32:12">ACEH/NOSU/MISH;Updated system files</release>
+    <release version="2.1.2" date="18.04.2016 01:50:09">ACEH;iSystem linker file and startup updated
+pdsc vendor information updated
+IAR: map file enabled
+ADC: added SD_FDAS and PD_FDAS definition</release>
+    <release version="2.1.3" date="18.04.2016 01:53:55">ACEH;public release</release>
+    <release version="2.2.0" date="19.05.2016 11:35:22">NOSU;Updated gpio header files, Updated system files</release>
+    <release version="2.2.1" date="19.05.2016 11:48:09">NOSU;Flash loader update: IAR: [S6E2D, S6E2G] fixed the problem that Flash loaders may not program the CR Trimming area / ARM: [S6E2G] fixed the problem that chip erase command generates timeout error</release>
+    <release version="2.2.2" date="31.05.2016 09:03:27">ACEH/NOSU;added missing FASTIO definitions</release>
+    <release version="2.2.3" date="07.06.2016 09:13:53">MSCH;Public release</release>
+  </releases>
+  <keywords>
+    <!-- keywords for indexing -->
+    <keyword>Cypress</keyword>
+    <keyword>Device Support</keyword>
+    <keyword>Device Family Package Cypress</keyword>
+    <keyword>FM3</keyword>
+    <keyword>MB9A</keyword>
+  </keywords>
+  <devices>
+    <!-- generated, do not modify this section! -->
+    <family Dfamily="FM3 Series" Dvendor="Cypress:19">
+      <description>
+The FM3 Series is designed for cost-sensitive embedded control applications.
+Typical applications include Industrial, Motor control, Factory automation, White goods, Power tools, Medical and healthcare, Hand-held devices
+  - highly reliable Flash (100,000 erase/write cycles) with 0 wait states at 72MHz)
+  - long term availablity (&gt; 10 years)
+      </description>
+      <!-- Interrupt -->
+      <feature type="NVIC" n="128" name="NVIC" />
+      <feature type="ExtInt" n="6" name="External Interrupt Controller Unit" />
+      <!-- Common Memory -->
+      <feature type="Memory" n="0x8000" name="WorkFlash memory" />
+      <!-- IO -->
+      <feature type="IOs" n="36" name="General Purpose I/Os" />
+      <!-- DMA -->
+      <feature type="DMA" n="4" name="DMA Controller" />
+      <!-- Analog -->
+      <feature type="ADC" n="8" m="12" name="AD converter" />
+      <!-- Comm IF -->
+      <feature type="MPSerial" n="4" name="MFS (Multi-Function Serial Interface) : UART, CSIO, LIN, I2C" />
+      <feature type="ComOther" n="1" name="USB 2.0 (Function / Host)" />
+      <feature type="ExtBus" n="16" name="External Bus Interface for 0" />
+      <!-- Timer -->
+      <feature type="Timer" n="8" name="Base Timer (Max 8 channels): PWM, PPG, PWC" />
+      <feature type="Timer" n="1" name="Dual Timer (32/16-bit Down Counter)" />
+      <feature type="Timer" n="1" name="Multi-Function Timer (MFT)" />
+      <feature type="Timer" n="1" name="Watch Counter" />
+      <feature type="Other" n="1" name="Quadrature Position/Revolution Counter (QPRC)" />
+      <feature type="RTC" n="1" m="32768" name="Real-time clock (RTC)" />
+      <feature type="WDT" n="1" name="Watchdog Timer (HW + SW)" />
+      <!-- Clock -->
+      <feature type="XTAL" n="4000000" m="48000000" name="Main Clock" />
+      <feature type="XTAL" n="32000" m="100000" name="32.768kHz Sub Clock" />
+      <feature type="IntRC" n="4000000" name="Built-in CR High-speed (+/- 2 %)" />
+      <feature type="IntRC" n="100000" name="Built-in CR Low-speed" />
+      <!-- Safety -->
+      <feature type="Other" n="1" name="Clock Super Visor (CSV)" />
+      <feature type="Other" n="2" name="Low-Voltage Detector (LVD)" />
+      <feature type="Other" n="1" name="CRC (Cyclic Redundancy Check) Accelerator " />
+      <!-- Power -->
+      <feature type="PowerMode" n="6" name="Low-Power Consumption Mode: SLEEP, TIMER, RTC, STOP, Deep standby RTC, Deep standby STOP" />
+      <feature type="VCC" n="2.7" m="5.5" />
+      <!-- Others -->
+      <!-- ************************  Subfamily 'MB9A310K'  **************************** -->
+      <subFamily DsubFamily="MB9A310K">
+        <processor Dcore="Cortex-M3" DcoreVersion="r2p1" Dfpu="0" Dmpu="1" Dendian="Little-endian" Dclock="40000000" />
+        <debug svd="cmsis\svd\mb9af31xk.svd" />
+        <memory id="IROM2" start="0x200C0000" size="0x8000" startup="0" default="1" />
+        <algorithm name="example\ARM\MB9xFxxx_Wflash32.FLM" start="0x00200000" size="0x2000" default="1" />
+        <!-- *************************  Device 'MB9AF311K'  ***************************** -->
+        <device Dname="MB9AF311K">
+          <compile header="common\mb9af31xk.h" define="MB9AF311K" />
+          <!-- Memory -->
+          <memory id="IROM1" start="0x00000000" size="0x10000" startup="1" default="1" />
+          <memory id="IRAM1" start="0x1FFFE000" size="0x2000" init="0" default="1" />
+          <memory id="IRAM2" start="0x20000000" size="0x2000" init="0" default="1" />
+          <algorithm name="example\ARM\MB9A310_64.FLM" start="0x1FFFE000" size="0x2000" default="1" />
+          <feature type="Memory" n="0x020000" name="MainFlash memory" />
+          <feature type="Memory" n="0x2000" name="SRAM0" />
+          <feature type="Memory" n="0x2000" name="SRAM1" />
+          <!-- Package -->
+          <feature type="LQFP" n="48" name="LQFP: FPT-48P-M49 (0.50mm pitch)" />
+          <feature type="LQFP" n="52" name="LQFP: FPT-52P-M02 (0.50mm pitch)" />
+          <feature type="QFN" n="48" name="QFN: LCC-48P-M73 (0.50mm pitch)" />
+        </device>
+        <!-- *************************  Device 'MB9AF312K'  ***************************** -->
+        <device Dname="MB9AF312K">
+          <compile header="common\mb9af31xk.h" define="MB9AF312K" />
+          <!-- Memory -->
+          <memory id="IROM1" start="0x00000000" size="0x20000" startup="1" default="1" />
+          <memory id="IRAM1" start="0x1FFFE000" size="0x2000" init="0" default="1" />
+          <memory id="IRAM2" start="0x20000000" size="0x2000" init="0" default="1" />
+          <algorithm name="example\ARM\MB9A310_128.FLM" start="0x1FFFE000" size="0x2000" default="1" />
+          <feature type="Memory" n="0x020000" name="MainFlash memory" />
+          <feature type="Memory" n="0x2000" name="SRAM0" />
+          <feature type="Memory" n="0x2000" name="SRAM1" />
+          <!-- Package -->
+          <feature type="LQFP" n="48" name="LQFP: FPT-48P-M49 (0.50mm pitch)" />
+          <feature type="LQFP" n="52" name="LQFP: FPT-52P-M02 (0.50mm pitch)" />
+          <feature type="QFN" n="48" name="QFN: LCC-48P-M73 (0.50mm pitch)" />
+        </device>
+      </subFamily>
+    </family>
+  </devices>
+  <conditions>
+    <!-- Compiler Conditions -->
+    <condition id="Compiler ARMCC">
+      <require Tcompiler="ARMCC" />
+    </condition>
+    <condition id="Compiler GCC">
+      <require Tcompiler="GCC" />
+    </condition>
+    <condition id="Compiler IAR">
+      <require Tcompiler="IAR" />
+    </condition>
+    <!-- Compiler Conditions -->
+    <condition id="IDE ARMCC">
+      <require Tcompiler="ARMCC" />
+    </condition>
+    <condition id="IDE GCC">
+      <require Tcompiler="GCC" />
+    </condition>
+    <condition id="IDE IAR">
+      <require Tcompiler="IAR" />
+    </condition>
+    <condition id="FM0P">
+      <accept Dcore="Cortex-M0+" />
+    </condition>
+    <condition id="FM3">
+      <accept Dcore="Cortex-M3" />
+    </condition>
+    <condition id="FM4">
+      <accept Dcore="Cortex-M4" />
+    </condition>
+    <condition id="FM">
+      <accept condition="FM0P" />
+      <accept condition="FM3" />
+      <accept condition="FM4" />
+      <accept condition="Compiler ARMCC" />
+      <accept condition="Compiler GCC" />
+      <accept condition="Compiler IAR" />
+      <accept condition="IDE ARMCC" />
+      <accept condition="IDE GCC" />
+      <accept condition="IDE IAR" />
+    </condition>
+    <!-- Device Conditions -->
+    <condition id="MB9AF31XK">
+      <description>Cypress FM MB9AF31XK Devices</description>
+      <require Dvendor="Cypress:19" Dname="MB9AF31[12]K" />
+      <require Cclass="Device" Cgroup="Pin Configuration" />
+      <require Cclass="Device" Cgroup="GPIO Macros" />
+      <require Cclass="Device" Cgroup="Base Types" />
+      <require Cclass="Device" Cgroup="MCU Header Files" />
+    </condition>
+    <condition id="MB9AF31XK CMSIS">
+      <description>Cypress FM MB9AF31XK Devices and CMSIS-CORE</description>
+      <require condition="MB9AF31XK" />
+      <require Cclass="CMSIS" Cgroup="CORE" />
+    </condition>
+  </conditions>
+  <components>
+    <component Cclass="Device" Cgroup="Startup" Cversion="1.0.0" condition="MB9AF31XK CMSIS">
+      <description>System Startup for Cypress MB9AF31XK Devices</description>
+      <files>
+        <!-- include folder / file -->
+        <file category="include" name="common/" />
+        <file category="header" name="common/mb9af31xk.h" />
+        <file category="header" name="example/source/mcu.h" version="1.0.0" />
+        <!-- startup / system file -->
+        <file category="source" name="example/ARM/startup_mb9a310k.s" version="1.0.0" attr="config" condition="Compiler ARMCC" />
+        <file category="source" name="example/IAR/startup_mb9a310k.s" version="1.0.0" attr="config" condition="Compiler IAR" />
+        <file category="source" name="example/iSYSTEM/startup_mb9a310k.s" version="1.0.0" attr="config" condition="Compiler GCC" />
+        <file category="source" name="common/system_mb9a310k.c" attr="config" version="1.0.0" />
+        <file category="header" name="common/system_mb9a310k.h" attr="config" version="1.0.0" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="Pin Configuration" Cversion="1.0.0" condition="MB9AF31XK">
+      <description>Pin Configuration</description>
+      <files>
+        <file category="include" name="example/source/config/" />
+        <file category="source" name="example/source/config/iomux.c" attr="config" version="1.0.0" />
+        <file category="header" name="example/source/config/iomux.h" attr="config" version="1.0.0" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="GPIO Macros" Cversion="1.0.0" condition="MB9AF31XK">
+      <description>GPIO Macros</description>
+      <files>
+        <file category="include" name="common/" />
+        <file category="header" name="common/gpio.h" version="1.0.0" />
+        <file category="header" name="common/fgpio.h" version="1.0.0" condition="FM0P" />
+        <file category="header" name="common/gpio_mb9af31xk.h" version="1.0.0" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="Base Types" Cversion="1.0.0" condition="FM">
+      <description>Base Type Definitions</description>
+      <files>
+        <file category="include" name="common/" />
+        <file category="header" name="common/base_types.h" version="1.0.0" />
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="MCU Header Files" Cversion="2.0.0" condition="MB9AF31XK">
+      <description>MCU Header Files</description>
+      <files>
+        <file category="include" name="common/" />
+        <file category="include" name="example/source/" />
+        <file category="header" name="common/mb9af31xk.h" />
+        <file category="header" name="example/source/mcu.h" version="1.0.0" />
+      </files>
+    </component>
+  </components>
+  <examples>
+  </examples>
+</package>

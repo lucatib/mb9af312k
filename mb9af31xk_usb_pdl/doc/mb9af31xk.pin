@@ -1,0 +1,120 @@
+# ********************************************************************************
+# Copyright (C) 2013-2016, Cypress Semiconductor Corporation or a                 
+# subsidiary of Cypress Semiconductor Corporation.  All rights reserved.          
+#                                                                                 
+# This software, including source code, documentation and related                 
+# materials ("Software"), is owned by Cypress Semiconductor Corporation or        
+# one of its subsidiaries ("Cypress") and is protected by and subject to          
+# worldwide patent protection (United States and foreign), United States          
+# copyright laws and international treaty provisions. Therefore, you may use      
+# this Software only as provided in the license agreement accompanying the        
+# software package from which you obtained this Software ("EULA").                
+#                                                                                 
+# If no EULA applies, Cypress hereby grants you a personal, non-exclusive,        
+# non-transferable license to copy, modify, and compile the                       
+# Software source code solely for use in connection with Cypress's                
+# integrated circuit products.  Any reproduction, modification, translation,      
+# compilation, or representation of this Software except as specified             
+# above is prohibited without the express written permission of Cypress.          
+#                                                                                 
+# Disclaimer: THIS SOFTWARE IS PROVIDED AS-IS, WITH NO                            
+# WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING,                            
+# BUT NOT LIMITED TO, NONINFRINGEMENT, IMPLIED                                    
+# WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A                                 
+# PARTICULAR PURPOSE. Cypress reserves the right to make                          
+# changes to the Software without notice. Cypress does not assume any             
+# liability arising out of the application or use of the Software or any          
+# product or circuit described in the Software. Cypress does not                  
+# authorize its products for use in any products where a malfunction or           
+# failure of the Cypress product may reasonably be expected to result in          
+# significant property damage, injury or death ("High Risk Product"). By          
+# including Cypress's product in a High Risk Product, the manufacturer            
+# of such system or application assumes all risk of such use and in doing         
+# so agrees to indemnify Cypress against all liability.                           
+# ********************************************************************************
+# -------------------------------------------------------------------------------
+# mb9af31xk Pin Assignment File (48 pins)
+#
+# Format: PinName[,PinName,..];Port#;Pin#
+# Port# == -- means functional pin like RSTX, VCC, etc.
+#
+# History
+$$h+
+ **   - 2015-12-04  2.0  NOSU	Clean ALL FM Series pin files
+ **   - 2016-03-15  2.1  NOSU   Updated Disclaimer
+ **   - 2016-05-11  2.2  NOSU	Added brackets in PINCONFIG_SET_REG
+$$h-
+$$device:mb9af31xk
+$$pins:48
+
+# PFR0
+TRSTX;00;37
+TCK,SWCLK;01;38
+TDI;02;39
+TMS,SWDIO;03;40
+TDO,SWO;04;41
+NMIX,CROUT_1,RTCCO_0,SUBOUT_0,WKUP0;0F;42
+
+# PFR1
+AN00;10;25
+AN01,SIN1_1,INT02_1,FRCK0_2,IC02_0,WKUP1;11;26
+AN02,SOT1_1,IC00_2;12;27
+AN03,SCK1_1,IC01_2,RTCCO_1,SUBOUT_1;13;28
+AN04,SIN0_1,INT03_1,IC02_2;14;29
+AN05,SOT0_1,IC03_2;15;30
+
+# PFR2
+SIN0_0,INT06_1,WKUP2;21;36
+AN07,SOT0_0,TIOB7_1;22;35
+AN06,SCK0_0,TIOA7_1;23;34
+
+
+# PFR3
+DTTI0X_0,ADTG_2;39;5
+RTO00_0,TIOA0_1,RTCCO_2,SUBOUT_2;3A;6
+RTO01_0,TIOA1_1;3B;7
+RTO02_0,TIOA2_1;3C;8
+RTO03_0,TIOA3_1;3D;9
+RTO04_0,TIOA4_1;3E;10
+RTO05_0,TIOA5_1;3F;11
+
+# PFR4
+X0A;46;15
+X1A;47;16
+TIOB0_0;49;18
+TIOB1_0;4A;19
+
+
+# PFR5
+INT00_0,AIN0_2,SIN3_1;50;2
+INT01_0,BIN0_2,SOT3_1;51;3
+INT02_0,ZIN0_2,SCK3_1;52;4
+
+
+# PFR6
+SIN5_0,TIOA2_2,INT15_1,IC00_0,WKUP3;60;44
+SOT5_0,TIOB2_2,UHCONX,DTTI0X_2;61;43
+
+
+# PFR8
+UDP0;80;47
+UDM0;81;46
+
+#PFRE
+MD1;E0;20
+X0;E2;22
+X1;E3;23
+
+# Functional pins
+VCC;--;1
+VCC;--;14
+USBVCC;--;45
+VSS;--;12
+VSS;--;24
+VSS;--;48
+AVCC;--;31
+AVRH;--;32
+AVSS;--;33
+C;--;13
+INITX;--;17
+MD0;--;21
