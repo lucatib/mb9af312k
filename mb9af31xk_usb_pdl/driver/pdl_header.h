@@ -51,7 +51,7 @@
 #include "mcu.h"
 #include "stdio.h"
 #include "pdl_user.h"
-//#include "iris_io.h"
+#include "iris_io.h"
 
 /* C binding of definitions if building with C++ compiler                     */
 #ifdef __cplusplus

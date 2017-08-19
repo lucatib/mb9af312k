@@ -47,17 +47,21 @@
 #ifndef __USBDEVICEHW_H__
 #define __USBDEVICEHW_H__
 
+#include "pdl_header.h"
+
+//Pin44 INT15_1 on port P60 to handle power connection to usb device
 #define DEVICE0VBUS_DISABLEISR                            
 #define DEVICE0VBUS_ENABLEISR                             
-#define DEVICE0VBUS_ISRISSET                              
+#define DEVICE0VBUS_ISRISSET                        			0      
 #define DEVICE0VBUS_CLEARISRFLAG                          
 #define DEVICE0VBUS_SETLOWDETECT                          
 #define DEVICE0VBUS_SETHIGHDETECT                         
-#define DEVICE0VBUS_HIGHDETECT                            1 //(((FM3_GPIO->PDIR6 & 0x01) > 0) && ((FM3_GPIO->PDOR1 & (1 << 3)) == 0))
-#define DEVICE0VBUS_INIT                                  //bFM3_GPIO_PFR6_P0 = 1; bFM3_GPIO_DDR6_P0 = 0
+#define DEVICE0VBUS_HIGHDETECT                            Gpio1pin_Get( GPIO1PIN_P60 ) //(((FM3_GPIO->PDIR6 & 0x01) > 0) && ((FM3_GPIO->PDOR1 & (1 << 3)) == 0))
+#define DEVICE0VBUS_INIT                                  Gpio1pin_InitIn ( GPIO1PIN_P60, Gpio1pin_InitPullup( 0u ) ) //bFM3_GPIO_PFR6_P0 = 1; bFM3_GPIO_DDR6_P0 = 0
 #define DEVICE0VBUS_DEINIT                                
 #define DEVICE0VBUS_ENABLED                               1
 
+//Pin43 UHCONX on port P61 to handle pullup signal to usb host handler
 #define DEVICE0HCONX_INIT                                 
 #define DEVICE0HCONX_SET                                  
 #define DEVICE0HCONX_CLEAR                                

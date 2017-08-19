@@ -50,8 +50,6 @@
 /******************************************************************************/
 #include "pdl_header.h"
 
-#include "board.h"
-
 /* Includes for USB */
 #include "usb.h"
 #if FM_PERIPHERAL_USB_DEVICE_ENABLED == ON
@@ -88,37 +86,12 @@
 /* End of includes for USB */
 
 
-
-
-///* START ADDITIONAL PROCEDURES   */
-//#ifndef _DELAYLOOP_
-//#define _DELAYLOOP_
-//static void delay(volatile uint32_t u32TimeOut)
-//{
-//   volatile uint32_t i;
-//   u32TimeOut = u32TimeOut * 100;
-//   while(u32TimeOut--)
-//   {
-//       for(i=10;i>0;i--)
-//       {
-//       }
-//   }
-//}
-//#endif /* !defined(_DELAYLOOP_) */
-/* END ADDITIONAL PROCEDURES   */
-
-
-
 /*      START GLOBAL VARIABLES FOR VIRTUAL COM PORT EXAMPLE       */
 
  char_t pu8DeviceCdcReceiveBuffer[512];
  uint32_t u32DeviceCdcReceiveSize;
  boolean_t bDeviceCdcComConnected;
 /*      END GLOBAL VARIABLES FOR VIRTUAL COM PORT EXAMPLE        */
-
-
-
-//#include "iomux.h"
 
 /**
  ******************************************************************************
@@ -128,10 +101,6 @@
  ******************************************************************************/
 int main(void)
 {
-
-    Board_Init(); //Initialize board hardware like LEDs and buttons, 
-                  //defined in boardconfig.h 
-
     UsbConfig_UsbInit();
 
 		UsbDeviceCdcCom_SetSeparator('\r');    // there is the possibility to set end of buffer by a seperator
@@ -139,8 +108,6 @@ int main(void)
 
     for(;;)
     {
-
-        Board_UpdateTasks(); //Periodic Tasks, called from main
 
         #if (((USB_USE_PDL == 1) || (USB_USE_L3 == 1) || (USB_USE_EXT_INT == 0)) && (!defined(BOARD_USB) || (BOARD_USB == OFF)))
         UsbConfig_SwitchMode();  // switch USB<n> if required, otherwise, initialize USB host/device mode
