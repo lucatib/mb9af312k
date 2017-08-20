@@ -204,10 +204,10 @@
 #define PDL_PERIPHERAL_ENABLE_LVD               PDL_OFF
 
 // Multi Function Serial Interfaces
-#define PDL_PERIPHERAL_ENABLE_MFS0              PDL_OFF
-#define PDL_PERIPHERAL_ENABLE_MFS1              PDL_ON
+#define PDL_PERIPHERAL_ENABLE_MFS0              PDL_ON
+#define PDL_PERIPHERAL_ENABLE_MFS1              PDL_OFF
 #define PDL_PERIPHERAL_ENABLE_MFS2              PDL_OFF
-#define PDL_PERIPHERAL_ENABLE_MFS3              PDL_ON
+#define PDL_PERIPHERAL_ENABLE_MFS3              PDL_OFF
 #define PDL_PERIPHERAL_ENABLE_MFS4              PDL_OFF
 #define PDL_PERIPHERAL_ENABLE_MFS5              PDL_OFF
 #define PDL_PERIPHERAL_ENABLE_MFS6              PDL_OFF
@@ -572,10 +572,10 @@
 #define PDL_INTERRUPT_ENABLE_I2SL1             PDL_OFF
 
 // Multi Function Serial Interfaces
-#define PDL_INTERRUPT_ENABLE_MFS0              PDL_OFF
-#define PDL_INTERRUPT_ENABLE_MFS1              PDL_ON
+#define PDL_INTERRUPT_ENABLE_MFS0              PDL_ON
+#define PDL_INTERRUPT_ENABLE_MFS1              PDL_OFF
 #define PDL_INTERRUPT_ENABLE_MFS2              PDL_OFF
-#define PDL_INTERRUPT_ENABLE_MFS3              PDL_ON
+#define PDL_INTERRUPT_ENABLE_MFS3              PDL_OFF
 #define PDL_INTERRUPT_ENABLE_MFS4              PDL_OFF
 #define PDL_INTERRUPT_ENABLE_MFS5              PDL_OFF
 #define PDL_INTERRUPT_ENABLE_MFS6              PDL_OFF

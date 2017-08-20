@@ -68,7 +68,7 @@
 //      <1=> hard warnings
 //      <2=> all warnings
 #ifndef USBWARNLEVEL
-    #define USBWARNLEVEL         2           //0: no warnings, 1: hard warnings, 2: all warnings
+    #define USBWARNLEVEL         0           //0: no warnings, 1: hard warnings, 2: all warnings
 #endif
 // </h>
 

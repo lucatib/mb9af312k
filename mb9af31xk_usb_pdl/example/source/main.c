@@ -86,6 +86,12 @@
 /* End of includes for USB */
 
 
+#define InitCsio0Io(void)  {SetPinFunc_SIN0_0();SetPinFunc_SOT0_0();SetPinFunc_SCK0_0();Gpio1pin_InitOut( GPIO1PIN_P00, Gpio1pin_InitVal( 1u ) );}
+volatile stc_mfsn_csio_t* CsioCh0 = &CSIO0;
+uint32_t SendCnt = 0, ReceiveCnt = 0;
+static uint8_t au8CsioMasterTxBuf[64] = "01234567";
+static uint8_t au8CsioMasterRxBuf[64];
+
 /*      START GLOBAL VARIABLES FOR VIRTUAL COM PORT EXAMPLE       */
 
  char_t pu8DeviceCdcReceiveBuffer[512];
@@ -95,12 +101,103 @@
 
 /**
  ******************************************************************************
+ ** \brief  CSIO master transfer interrupt callback function
+ ******************************************************************************/
+static void CsioMasterTxIntCallback(void)
+{
+    if(SendCnt == 8)
+    {
+        /* Disable interrupt */
+        Mfs_Csio_DisableIrq(CsioCh0, CsioTxIrq);
+        return;
+    }
+  
+    Mfs_Csio_SendData(CsioCh0, au8CsioMasterTxBuf[SendCnt], TRUE);  
+    SendCnt++;
+
+}
+/**
+ ******************************************************************************
+ ** \brief  CSIO Master receive interrupt callback function
+ ******************************************************************************/
+static void CsioMasterRxIntCallback(void)
+{
+    au8CsioMasterRxBuf[ReceiveCnt] = Mfs_Csio_ReceiveData(CsioCh0);
+    ReceiveCnt++;
+    
+//    if(ReceiveCnt == 8)
+//    {
+//        /* Disable interrupt */
+//        Mfs_Csio_DisableIrq(CsioCh1, CsioRxIrq);
+//        return;
+//    }
+}
+
+void Spi_CheckTxRx(void){
+		/* Enable TX and RX function of CSIO1   */
+    Mfs_Csio_EnableFunc(CsioCh0, CsioTx);
+    Mfs_Csio_EnableFunc(CsioCh0, CsioRx);
+		SendCnt = 0;
+    ReceiveCnt = 0;
+
+		/* Master write */
+		Mfs_Csio_EnableIrq(CsioCh0, CsioRxIrq);
+		Gpio1pin_Put( GPIO1PIN_P00, 0u);
+    while(SendCnt < 8){
+        while(TRUE != Mfs_Csio_GetStatus(CsioCh0, CsioTxEmpty));
+        Mfs_Csio_SendData(CsioCh0, 0x00u, FALSE);   /* Dummy write */    
+    }
+    while(TRUE != Mfs_Csio_GetStatus(CsioCh0, CsioTxIdle)); // wait until TX bus idle
+    Gpio1pin_Put( GPIO1PIN_P00, 1u);
+		
+    /* Wait receive finish */
+    while(ReceiveCnt < 8){
+        ;
+    }
+		
+    /* Disable TX and RX function of CSIO1   */
+    Mfs_Csio_DisableFunc(CsioCh0, CsioTx);
+    Mfs_Csio_DisableFunc(CsioCh0, CsioRx);
+}
+/**
+ ******************************************************************************
  ** \brief  Main function
  **
  ** \return int return value, if needed
  ******************************************************************************/
 int main(void)
 {
+		stc_mfs_csio_config_t stcCsio1Config;
+		stc_csio_irq_cb_t stcCsio1IrqCb;
+	
+	    /* Clear configuration structure */
+    PDL_ZERO_STRUCT(stcCsio1Config);
+    PDL_ZERO_STRUCT(stcCsio1IrqCb);
+
+      /* Initialize interrupt callback functions */
+    stcCsio1IrqCb.pfnTxIrqCb = CsioMasterTxIntCallback;
+		stcCsio1IrqCb.pfnRxIrqCb = CsioMasterRxIntCallback;
+	  
+		/* Initialize CSIO function I/O */    
+    InitCsio0Io();
+		
+		/* Initialize CSIO master  */
+    stcCsio1Config.enMsMode = CsioMaster;
+    stcCsio1Config.enActMode = CsioActNormalMode;
+    stcCsio1Config.bInvertClk = FALSE;
+    stcCsio1Config.u32BaudRate = 100000;
+    stcCsio1Config.enDataLength = CsioEightBits;
+    stcCsio1Config.enBitDirection = CsioDataMsbFirst;
+    stcCsio1Config.enSyncWaitTime = CsioSyncWaitZero;
+    stcCsio1Config.pstcFifoConfig = NULL;
+    //stcCsio1Config.pstcCsConfig = &stcCsio1CsConfig;
+    //stcCsio1Config.pstcSerialTimer = NULL;
+    stcCsio1Config.pstcIrqEn = NULL;
+    stcCsio1Config.pstcIrqCb = &stcCsio1IrqCb;
+    stcCsio1Config.bTouchNvic = TRUE;
+    
+    Mfs_Csio_Init(CsioCh0, &stcCsio1Config);
+	
     UsbConfig_UsbInit();
 
 		UsbDeviceCdcCom_SetSeparator('\r');    // there is the possibility to set end of buffer by a seperator
@@ -125,10 +222,6 @@ int main(void)
            bDeviceCdcComConnected = UsbDeviceCdcCom_IsConnected();
            if (bDeviceCdcComConnected == TRUE)
            {
-               #ifdef _SEVENSEG_API_MSC_
-                   SEVENSEG_NUMBER(1);
-               #endif
-	
                /* sending welcome message after connection*/
                UsbDeviceCdcCom_SendString("\r\n");
                UsbDeviceCdcCom_SendString("Welcome to Spansion Virtual Comm Port Example!\r\n");
@@ -136,9 +229,6 @@ int main(void)
            }
            else
            {
-               #ifdef _SEVENSEG_API_MSC_
-	               SEVENSEG_NUMBER(0);
-               #endif 
            }
        }
 	   
@@ -153,10 +243,9 @@ int main(void)
                UsbDeviceCdcCom_SendByte('\n');
                UsbDeviceCdcCom_SendString("Received String: ");
                UsbDeviceCdcCom_SendString(pu8DeviceCdcReceiveBuffer);
-               UsbDeviceCdcCom_SendString("\r\n");
-	           #ifdef _SEVENSEG_API_MSC_
-	               SEVENSEG_NUMBER(u32DeviceCdcReceiveSize);
-               #endif    
+               UsbDeviceCdcCom_SendString("\r\n");		 
+						 
+							 Spi_CheckTxRx();
            }  
        }  
        #endif
