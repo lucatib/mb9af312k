@@ -85,12 +85,55 @@
 #endif 
 /* End of includes for USB */
 
+#define SAMPLE_CSIO_MASTER_RX_BUFFSIZE  8
+#define SAMPLE_CSIO_MASTER_TX_BUFFSIZE  8
+	
+#if (PDL_MCU_CORE == PDL_FM3_CORE)
+	#define SAMPLE_CSIO_FIFO_MAX_CAPACITY         (16u)
+#endif
+
+#define SAMPLE_CSIO_FIFO_RX_CNT               (8u)
 
 #define InitCsio0Io(void)  {SetPinFunc_SIN0_0();SetPinFunc_SOT0_0();SetPinFunc_SCK0_0();Gpio1pin_InitOut( GPIO1PIN_P00, Gpio1pin_InitVal( 1u ) );}
-volatile stc_mfsn_csio_t* CsioCh0 = &CSIO0;
-uint32_t SendCnt = 0, ReceiveCnt = 0;
-static uint8_t au8CsioMasterTxBuf[64] = "01234567";
-static uint8_t au8CsioMasterRxBuf[64];
+/*****************************************************************************/
+/* Global variable definitions (declared in header file with 'extern')       */
+/*****************************************************************************/
+/*****************************************************************************/
+/* Local type definitions ('typedef')                                        */
+/*****************************************************************************/
+/// CSIO TX FIFO information structure
+typedef struct stc_tx_fifo_info
+{
+    uint32_t u32TxCnt;
+    uint8_t* pTxBuf;
+    boolean_t bTxFinish;
+    
+}stc_tx_fifo_info_t;
+
+/// UART RX FIFO information structure
+typedef struct stc_rx_fifo_info
+{
+    uint32_t u32RxCnt;
+    uint8_t* pRxBuf;
+    boolean_t bRxFinish;
+    
+}stc_rx_fifo_info_t;
+
+/*****************************************************************************/
+/* Local function prototypes ('static')                                      */
+/*****************************************************************************/
+
+/*****************************************************************************/
+/* Local variable definitions ('static')                                     */
+/*****************************************************************************/
+static volatile stc_mfsn_csio_t* CsioCh0 = &CSIO0;
+static uint8_t au8CsioMasterTxBuf[] = "01234567";
+static uint8_t au8CsioMasterRxBuf[SAMPLE_CSIO_MASTER_RX_BUFFSIZE];
+static stc_tx_fifo_info_t stcTxFifoInfo = {0};
+static stc_rx_fifo_info_t stcRxFifoInfo = {0};
+stc_mfs_csio_config_t 	stcCsio0Config;
+stc_csio_irq_cb_t 			stcCsio0IrqCb;
+stc_mfs_fifo_config_t 	stcFifoConfig;
 
 /*      START GLOBAL VARIABLES FOR VIRTUAL COM PORT EXAMPLE       */
 
@@ -101,64 +144,146 @@ static uint8_t au8CsioMasterRxBuf[64];
 
 /**
  ******************************************************************************
- ** \brief  CSIO master transfer interrupt callback function
+ ** \brief  CSIO master FIFO transfer interrupt callback function
  ******************************************************************************/
-static void CsioMasterTxIntCallback(void)
+static void CsioMasterFifoTxIntCallback(void)
 {
-    if(SendCnt == 8)
+    uint8_t u8i = 0;
+    if(stcTxFifoInfo.u32TxCnt > SAMPLE_CSIO_FIFO_MAX_CAPACITY)
     {
-        /* Disable interrupt */
-        Mfs_Csio_DisableIrq(CsioCh0, CsioTxIrq);
+        while(u8i < SAMPLE_CSIO_FIFO_MAX_CAPACITY)
+        {
+            Mfs_Csio_SendData(CsioCh0, *stcTxFifoInfo.pTxBuf++, TRUE);
+            u8i++;
+        }
+        stcTxFifoInfo.u32TxCnt -= SAMPLE_CSIO_FIFO_MAX_CAPACITY;
         return;
     }
+    
+    while(u8i < stcTxFifoInfo.u32TxCnt)
+    {
+        Mfs_Csio_SendData(CsioCh0, *stcTxFifoInfo.pTxBuf++, TRUE);
+        u8i++;
+    }
   
-    Mfs_Csio_SendData(CsioCh0, au8CsioMasterTxBuf[SendCnt], TRUE);  
-    SendCnt++;
-
+    Mfs_Csio_DisableIrq(CsioCh0, CsioTxFifoIrq);
+    
+    stcTxFifoInfo.bTxFinish = TRUE;
 }
+
 /**
  ******************************************************************************
  ** \brief  CSIO Master receive interrupt callback function
  ******************************************************************************/
 static void CsioMasterRxIntCallback(void)
 {
-    au8CsioMasterRxBuf[ReceiveCnt] = Mfs_Csio_ReceiveData(CsioCh0);
-    ReceiveCnt++;
+    uint8_t u8i = 0;
+    if(stcRxFifoInfo.u32RxCnt > SAMPLE_CSIO_MASTER_RX_BUFFSIZE) 
+    {
+        /* Receive data when RX FIFO count match with SAMPLE_UART_FIFO_RX_CNT */
+        while(u8i < SAMPLE_CSIO_MASTER_RX_BUFFSIZE)
+        {
+            *stcRxFifoInfo.pRxBuf++ = Mfs_Csio_ReceiveData(CsioCh0); 
+            u8i++;
+        }
+        stcRxFifoInfo.u32RxCnt -= SAMPLE_CSIO_MASTER_RX_BUFFSIZE;
+        return;
+    }
     
-//    if(ReceiveCnt == 8)
-//    {
-//        /* Disable interrupt */
-//        Mfs_Csio_DisableIrq(CsioCh1, CsioRxIrq);
-//        return;
-//    }
+    /* Receive data when RX FIFO is idle */
+    /* idle means FIFO count is less than SAMPLE_UART_FIFO_RX_CNT and
+       RX FIFO don't receive data from then on for a short time. */
+    while(u8i < stcRxFifoInfo.u32RxCnt)
+    {
+        *stcRxFifoInfo.pRxBuf++ = Mfs_Csio_ReceiveData(CsioCh0);
+        u8i++;
+    }
+    
+    Mfs_Csio_DisableIrq(CsioCh0, CsioRxIrq);
+    
+    stcRxFifoInfo.bRxFinish = TRUE;
+}
+
+void CsioMasterInit(void){
+    /* Clear configuration structure */
+    PDL_ZERO_STRUCT(stcCsio0Config);
+    PDL_ZERO_STRUCT(stcCsio0IrqCb);
+    
+    /* Initialize CSIO function I/O */    
+    InitCsio0Io();
+    
+    /* Initialize CSIO interrupt callback functions */
+    stcCsio0IrqCb.pfnTxFifoIrqCb = CsioMasterFifoTxIntCallback;
+    stcCsio0IrqCb.pfnRxIrqCb = CsioMasterRxIntCallback;
+    
+    /* Initialize FIFO configuration */
+    stcFifoConfig.enFifoSel = MfsTxFifo1RxFifo2;
+    stcFifoConfig.u8ByteCount1 = 0u;
+    stcFifoConfig.u8ByteCount2 = SAMPLE_CSIO_FIFO_RX_CNT;
+    
+    /* Initialize CSIO master  */
+    stcCsio0Config.enMsMode = CsioMaster;
+    stcCsio0Config.enActMode = CsioActNormalMode;
+    stcCsio0Config.bInvertClk = FALSE;
+    stcCsio0Config.u32BaudRate = 100000;
+    stcCsio0Config.enDataLength = CsioEightBits;
+    stcCsio0Config.enBitDirection = CsioDataMsbFirst;
+    stcCsio0Config.pstcFifoConfig = &stcFifoConfig;
+    stcCsio0Config.pstcIrqCb = &stcCsio0IrqCb;
+    stcCsio0Config.pstcIrqEn = NULL;
+    stcCsio0Config.bTouchNvic = TRUE;
+    
+    Mfs_Csio_Init(CsioCh0, &stcCsio0Config);		
 }
 
 void Spi_CheckTxRx(void){
-		/* Enable TX and RX function of CSIO1   */
+	  uint8_t u8i;
+    
+    u8i = 0;
+	
+		Gpio1pin_Put( GPIO1PIN_P00, 0u);
+	
+	  /*************************************************************************/
+    /*                Master sends data to slave                             */
+    /*************************************************************************/
+		stcTxFifoInfo.u32TxCnt = SAMPLE_CSIO_MASTER_TX_BUFFSIZE;
+    stcTxFifoInfo.pTxBuf = au8CsioMasterTxBuf;
+    stcTxFifoInfo.bTxFinish = FALSE;
+		Mfs_Csio_EnableFunc(CsioCh0, CsioTx);
+		Mfs_Csio_EnableIrq(CsioCh0, CsioTxFifoIrq);    
+	  while(stcTxFifoInfo.bTxFinish != TRUE)
+				; // wait for Master TX finish
+		while(TRUE != Mfs_Csio_GetStatus(CsioCh0, CsioTxIdle))
+				; // wait TX idle
+    Mfs_Csio_DisableFunc(CsioCh0, CsioTx);
+		
+		/*************************************************************************/
+    /*                Master receives data from slave                        */
+    /*************************************************************************/
+		/* Initialize the FIFO information */
+    stcRxFifoInfo.u32RxCnt = SAMPLE_CSIO_MASTER_RX_BUFFSIZE;
+    stcRxFifoInfo.pRxBuf = au8CsioMasterRxBuf;
+    stcRxFifoInfo.bRxFinish = FALSE;
     Mfs_Csio_EnableFunc(CsioCh0, CsioTx);
     Mfs_Csio_EnableFunc(CsioCh0, CsioRx);
-		SendCnt = 0;
-    ReceiveCnt = 0;
-
-		/* Master write */
-		Mfs_Csio_EnableIrq(CsioCh0, CsioRxIrq);
-		Gpio1pin_Put( GPIO1PIN_P00, 0u);
-    while(SendCnt < 8){
-        while(TRUE != Mfs_Csio_GetStatus(CsioCh0, CsioTxEmpty));
-        Mfs_Csio_SendData(CsioCh0, 0x00u, FALSE);   /* Dummy write */    
+    Mfs_Csio_EnableIrq(CsioCh0, CsioRxIrq);
+    /* Read the data by writing data synchronously */
+    u8i = 0;
+    while(u8i < 8){
+        while(TRUE != Mfs_Csio_GetStatus(CsioCh0, CsioTxEmpty)); // wait TX idle
+        Mfs_Csio_SendData(CsioCh0, 0x00u, FALSE);   /* Dummy write */
+        u8i++;
     }
-    while(TRUE != Mfs_Csio_GetStatus(CsioCh0, CsioTxIdle)); // wait until TX bus idle
-    Gpio1pin_Put( GPIO1PIN_P00, 1u);
-		
-    /* Wait receive finish */
-    while(ReceiveCnt < 8){
-        ;
-    }
-		
-    /* Disable TX and RX function of CSIO1   */
+    while(TRUE != Mfs_Csio_GetStatus(CsioCh0, CsioTxIdle))
+			; // wait TX idle
+    while(stcRxFifoInfo.bRxFinish != TRUE)
+			;    /* Wait until Master finish reading FIFO */
     Mfs_Csio_DisableFunc(CsioCh0, CsioTx);
     Mfs_Csio_DisableFunc(CsioCh0, CsioRx);
+		
+		Gpio1pin_Put( GPIO1PIN_P00, 1u);
 }
+
 /**
  ******************************************************************************
  ** \brief  Main function
@@ -167,45 +292,17 @@ void Spi_CheckTxRx(void){
  ******************************************************************************/
 int main(void)
 {
-		stc_mfs_csio_config_t stcCsio1Config;
-		stc_csio_irq_cb_t stcCsio1IrqCb;
-	
-	    /* Clear configuration structure */
-    PDL_ZERO_STRUCT(stcCsio1Config);
-    PDL_ZERO_STRUCT(stcCsio1IrqCb);
-
-      /* Initialize interrupt callback functions */
-    stcCsio1IrqCb.pfnTxIrqCb = CsioMasterTxIntCallback;
-		stcCsio1IrqCb.pfnRxIrqCb = CsioMasterRxIntCallback;
-	  
-		/* Initialize CSIO function I/O */    
-    InitCsio0Io();
-		
-		/* Initialize CSIO master  */
-    stcCsio1Config.enMsMode = CsioMaster;
-    stcCsio1Config.enActMode = CsioActNormalMode;
-    stcCsio1Config.bInvertClk = FALSE;
-    stcCsio1Config.u32BaudRate = 100000;
-    stcCsio1Config.enDataLength = CsioEightBits;
-    stcCsio1Config.enBitDirection = CsioDataMsbFirst;
-    stcCsio1Config.enSyncWaitTime = CsioSyncWaitZero;
-    stcCsio1Config.pstcFifoConfig = NULL;
-    //stcCsio1Config.pstcCsConfig = &stcCsio1CsConfig;
-    //stcCsio1Config.pstcSerialTimer = NULL;
-    stcCsio1Config.pstcIrqEn = NULL;
-    stcCsio1Config.pstcIrqCb = &stcCsio1IrqCb;
-    stcCsio1Config.bTouchNvic = TRUE;
-    
-    Mfs_Csio_Init(CsioCh0, &stcCsio1Config);
-	
     UsbConfig_UsbInit();
 
 		UsbDeviceCdcCom_SetSeparator('\r');    // there is the possibility to set end of buffer by a seperator
 		UsbDeviceCdcCom_SetEchomode(TRUE); // all input shall be echoed
 
+		CsioMasterInit();
+
     for(;;)
     {
-
+				Spi_CheckTxRx();
+			
         #if (((USB_USE_PDL == 1) || (USB_USE_L3 == 1) || (USB_USE_EXT_INT == 0)) && (!defined(BOARD_USB) || (BOARD_USB == OFF)))
         UsbConfig_SwitchMode();  // switch USB<n> if required, otherwise, initialize USB host/device mode
         #endif
@@ -244,8 +341,6 @@ int main(void)
                UsbDeviceCdcCom_SendString("Received String: ");
                UsbDeviceCdcCom_SendString(pu8DeviceCdcReceiveBuffer);
                UsbDeviceCdcCom_SendString("\r\n");		 
-						 
-							 Spi_CheckTxRx();
            }  
        }  
        #endif
@@ -255,6 +350,8 @@ int main(void)
        /*                                                                                                */
        /**************************************************************************************************/
 
+			 
+			 
     } /* End Loop Forever */
 
 }
