@@ -163,16 +163,16 @@
             <AdsACrf>0</AdsACrf>
             <AdsANop>0</AdsANop>
             <AdsANot>0</AdsANot>
-            <AdsLLst>1</AdsLLst>
+            <AdsLLst>0</AdsLLst>
             <AdsLmap>1</AdsLmap>
             <AdsLcgr>0</AdsLcgr>
-            <AdsLsym>0</AdsLsym>
+            <AdsLsym>1</AdsLsym>
             <AdsLszi>0</AdsLszi>
             <AdsLtoi>0</AdsLtoi>
             <AdsLsun>0</AdsLsun>
             <AdsLven>0</AdsLven>
             <AdsLsxf>0</AdsLsxf>
-            <RvctClst>0</RvctClst>
+            <RvctClst>1</RvctClst>
             <GenPPlst>0</GenPPlst>
             <AdsCpuType>"Cortex-M3"</AdsCpuType>
             <RvctDeviceName></RvctDeviceName>
@@ -336,7 +336,7 @@
               <MiscControls></MiscControls>
               <Define>__CORE_FM3__</Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\common;..\..\example\source;..\..\example\source\config;..\..\library;..\..\library\lowlevel;..\..\library\middleware;..\..\library\highlevel;..\source\sk-fm3-48pmc-usbstick;..\source\config\usb;..\..\library\lowlevel\usb;..\..\library\middleware\usb\host;..\..\library\middleware\usb\device;..\..\driver</IncludePath>
+              <IncludePath>..\..\common;..\..\example\source;..\..\example\source\config;..\..\library;..\..\library\lowlevel;..\..\library\middleware;..\..\library\highlevel;..\source\sk-fm3-48pmc-usbstick;..\source\config\usb;..\..\library\lowlevel\usb;..\..\library\middleware\usb\host;..\..\library\middleware\usb\device;..\..\driver;..\..\SimpliciTI-IAR-1.2.0\Components\bsp;..\..\SimpliciTI-IAR-1.2.0\Components\application\p2p;..\..\SimpliciTI-IAR-1.2.0\Components\mrfi\radios\family1;..\..\SimpliciTI-IAR-1.2.0\Components\mrfi;..\..\SimpliciTI-IAR-1.2.0\Components\simpliciti\nwk_applications;..\..\SimpliciTI-IAR-1.2.0\Components\simpliciti\nwk</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -507,6 +507,11 @@
               <FileName>pdl_user.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\source\pdl_user.h</FilePath>
+            </File>
+            <File>
+              <FileName>mrfi_radio.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\source\mrfi_radio.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -782,6 +787,21 @@
               <FileName>pdl.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\driver\pdl.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>SimpliciTI</GroupName>
+          <Files>
+            <File>
+              <FileName>mrfi_spi.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\SimpliciTI-IAR-1.2.0\Components\mrfi\radios\family1\mrfi_spi.c</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_board.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\SimpliciTI-IAR-1.2.0\Components\bsp\bsp_board.c</FilePath>
             </File>
           </Files>
         </Group>
