@@ -245,6 +245,7 @@ void __inline MRFI_RSSI_VALID_WAIT(void){
  *                                    Local Constants
  * ------------------------------------------------------------------------------------------------
  */
+#if 0
 static const uint8_t mrfiRadioCfg[][2] =
 {
   /* internal radio configuration */
@@ -284,10 +285,8 @@ static const uint8_t mrfiRadioCfg[][2] =
   {  TEST1,     SMARTRF_SETTING_TEST1     },
   {  TEST0,     SMARTRF_SETTING_TEST0     },
 };
+#endif 
 
-#define TRANSPARENT_SETTING_IOCFG0_RX		0x0D	//GDO0 as DATA output in RX
-#define TRANSPARENT_SETTING_IOCFG0_HiZ	0x2E	//GDO0 as HiZ before TX mode (STX set up automatically as input)
-#define TRANSPARENT_SETTING_IOCFG2  		0x0D	//GDO2 as Data OUT
 
 #define SMARTRF_RADIO_CC1101
 #define SMARTRF_SETTING_IOCFG2     0x0B
@@ -314,7 +313,13 @@ static const uint8_t mrfiRadioCfg[][2] =
 #define SMARTRF_SETTING_TEST1      0x35
 #define SMARTRF_SETTING_TEST0      0x09
 
-static const uint8_t mrfiRadioCfg1[][2] = {
+//Use GD0 as Tx/Rx one wire pin
+#define TRANSPARENT_SETTING_IOCFG0_RX		0x0D	//GDO0 as DATA output in RX
+#define TRANSPARENT_SETTING_IOCFG0_HiZ	0x2E	//GDO0 as HiZ before TX mode (STX set up automatically as input)
+//
+#define TRANSPARENT_SETTING_IOCFG2  		0x0D	//GDO2 as Data OUT
+
+static const uint8_t mrfiRadioCfg[][2] = {
   /* internal radio configuration */
 	//{  IOCFG2					, TRANSPARENT_SETTING_IOCFG2 },
   {  IOCFG0					, TRANSPARENT_SETTING_IOCFG0_HiZ },
@@ -511,24 +516,19 @@ void MRFI_Init(void)
   {
     uint8_t i;
 
-    for (i=0; i<(sizeof(mrfiRadioCfg1)/sizeof(mrfiRadioCfg1[0])); i++)
+    for (i=0; i<(sizeof(mrfiRadioCfg)/sizeof(mrfiRadioCfg[0])); i++)
     {
-      mrfiSpiWriteReg(mrfiRadioCfg1[i][0], mrfiRadioCfg1[i][1]);
+      mrfiSpiWriteReg(mrfiRadioCfg[i][0], mrfiRadioCfg[i][1]);
     }
   }
 
 	mrfiSpiWritePaTable(mrfiRFPowerTable,sizeof(mrfiRFPowerTable));
 	//mrfiSpiReadPaTable(mrfiRFPowerTable,sizeof(mrfiRFPowerTable));
 	
-	MRFI_CONFIG_GDO0_PIN_AS_INPUT();	
-	mrfiSpiWriteReg(IOCFG0,TRANSPARENT_SETTING_IOCFG0_RX);	
-	while (mrfiSpiReadReg( MARCSTATE ) != 0x0D)
-		mrfiSpiCmdStrobe( SRX );
-	mrfiRadioState = MRFI_RADIO_STATE_RX;
+	//Go to IDLE mode
+	MRFI_STROBE_IDLE_AND_WAIT();
+  mrfiRadioState = MRFI_RADIO_STATE_IDLE;
 	
-  /* Initial radio state is IDLE state */
-  //mrfiRadioState = MRFI_RADIO_STATE_IDLE;
-
 #if 0	
   /* set default channel */
   MRFI_SetLogicalChannel( 0 );
@@ -652,10 +652,171 @@ void MRFI_Init(void)
   BSP_ENABLE_INTERRUPTS();
 
 #endif 
+
 }
 
-#if 0 //----------------------------------
+void Mrfi_RxModeOn(void){
+	MRFI_CONFIG_GDO0_PIN_AS_INPUT();
+	mrfiSpiWriteReg(IOCFG0,TRANSPARENT_SETTING_IOCFG0_RX);
+	mrfiSpiCmdStrobe( SRX );
+	while (mrfiSpiReadReg( MARCSTATE ) != 0x0D);
+	mrfiRadioState = MRFI_RADIO_STATE_RX;
+}
 
+void Mrfi_TxModeOn(void){
+	if (mrfiRadioState != MRFI_RADIO_STATE_IDLE) {	
+		MRFI_STROBE_IDLE_AND_WAIT();
+		mrfiRadioState = MRFI_RADIO_STATE_IDLE;
+	}
+	mrfiSpiWriteReg(IOCFG0,TRANSPARENT_SETTING_IOCFG0_HiZ);
+	MRFI_CONFIG_GDO0_PIN_AS_OUTPUT();
+	mrfiSpiCmdStrobe( STX );
+	while (mrfiSpiReadReg( MARCSTATE ) != 0x13);
+	mrfiRadioState = MRFI_RADIO_STATE_TX;
+} 
+
+/**************************************************************************************************
+ * @fn          Mrfi_RxModeOff
+ *
+ * @brief       -
+ *
+ * @param       none
+ *
+ * @return      none
+ **************************************************************************************************
+ */
+void Mrfi_RxModeOff(void){
+  /*disable receive interrupts */
+  MRFI_DISABLE_SYNC_PIN_INT();
+
+  /* turn off radio */
+  MRFI_STROBE_IDLE_AND_WAIT();
+
+  /* flush the receive FIFO of any residual data */
+  mrfiSpiCmdStrobe( SFRX );
+
+  MRFI_POWER_IDLE_MODE();	
+
+  /* clear receive interrupt */
+  MRFI_CLEAR_SYNC_PIN_INT_FLAG();
+
+#ifdef MRFI_TIMER_ALWAYS_ACTIVE
+  stx_active = false; // indicate we're not in transmit
+#endif // MRFI_TIMER_ALWAYS_ACTIVE
+
+}
+
+
+/**************************************************************************************************
+ * @fn          MRFI_RxIdle
+ *
+ * @brief       Put radio in idle mode (receiver if off).  No harm is done this function is
+ *              called when radio is already idle.
+ *
+ * @param       none
+ *
+ * @return      none
+ **************************************************************************************************
+ */
+void MRFI_RxIdle(void)
+{
+  /* radio must be awake to move it to idle mode */
+  MRFI_ASSERT( mrfiRadioState != MRFI_RADIO_STATE_OFF );
+
+  /* if radio is on, turn it off */
+  if(mrfiRadioState == MRFI_RADIO_STATE_RX)
+  {
+    Mrfi_RxModeOff();
+    mrfiRadioState = MRFI_RADIO_STATE_IDLE;
+  }
+}
+
+
+/**************************************************************************************************
+ * @fn          MRFI_Sleep
+ *
+ * @brief       Request radio go to sleep.
+ *
+ * @param       none
+ *
+ * @return      none
+ **************************************************************************************************
+ */
+void MRFI_Sleep(void)
+{
+  bspIState_t s;
+
+  /* Critical section necessary for watertight testing and
+   * setting of state variables.
+   */
+  BSP_ENTER_CRITICAL_SECTION(s);
+
+  /* If radio is not asleep, put it to sleep */
+  if(mrfiRadioState != MRFI_RADIO_STATE_OFF)
+  {
+    /* go to idle so radio is in a known state before sleeping */
+    MRFI_RxIdle();
+
+    mrfiSpiCmdStrobe( SPWD );
+
+    /* Our new state is OFF */
+    mrfiRadioState = MRFI_RADIO_STATE_OFF;
+  }
+
+  BSP_EXIT_CRITICAL_SECTION(s);
+}
+
+
+/**************************************************************************************************
+ * @fn          MRFI_WakeUp
+ *
+ * @brief       Wake up radio from sleep state.
+ *
+ * @param       none
+ *
+ * @return      none
+ **************************************************************************************************
+ */
+void MRFI_WakeUp(void)
+{
+  /* if radio is already awake, just ignore wakeup request */
+  if(mrfiRadioState != MRFI_RADIO_STATE_OFF)
+  {
+    return;
+  }
+
+  /* drive CSn low to initiate wakeup */
+  MRFI_SPI_DRIVE_CSN_LOW();
+
+  /* wait for MISO to go high indicating the oscillator is stable */
+  while (MRFI_SPI_SO_IS_HIGH());
+
+  /* wakeup is complete, drive CSn high and continue */
+  MRFI_SPI_DRIVE_CSN_HIGH();
+
+/*
+ *  The test registers must be restored after sleep for the CC1100 and CC2500 radios.
+ *  This is not required for the CC1101 radio.
+ */
+#ifndef MRFI_CC1101
+  mrfiSpiWriteReg( TEST2, SMARTRF_SETTING_TEST2 );
+  mrfiSpiWriteReg( TEST1, SMARTRF_SETTING_TEST1 );
+  mrfiSpiWriteReg( TEST0, SMARTRF_SETTING_TEST0 );
+#endif
+
+  /* enter idle mode */
+  mrfiRadioState = MRFI_RADIO_STATE_IDLE;
+  MRFI_STROBE_IDLE_AND_WAIT();
+
+#ifdef MRFI_TIMER_ALWAYS_ACTIVE
+  stx_active = false; // indicate we're not in transmit
+#endif // MRFI_TIMER_ALWAYS_ACTIVE
+}
+
+
+
+
+#if 0
 
 /**************************************************************************************************
  * @fn          MRFI_PrepareToTx
@@ -1300,145 +1461,6 @@ void MRFI_RxOn(void)
     Mrfi_RxModeOn();
   }
 }
-
-/**************************************************************************************************
- * @fn          Mrfi_RxModeOff
- *
- * @brief       -
- *
- * @param       none
- *
- * @return      none
- **************************************************************************************************
- */
-void Mrfi_RxModeOff(void){
-  /*disable receive interrupts */
-  MRFI_DISABLE_SYNC_PIN_INT();
-
-  /* turn off radio */
-  MRFI_STROBE_IDLE_AND_WAIT();
-
-  /* flush the receive FIFO of any residual data */
-  mrfiSpiCmdStrobe( SFRX );
-
-  MRFI_POWER_IDLE_MODE();	
-
-  /* clear receive interrupt */
-  MRFI_CLEAR_SYNC_PIN_INT_FLAG();
-
-#ifdef MRFI_TIMER_ALWAYS_ACTIVE
-  stx_active = false; // indicate we're not in transmit
-#endif // MRFI_TIMER_ALWAYS_ACTIVE
-
-}
-
-
-/**************************************************************************************************
- * @fn          MRFI_RxIdle
- *
- * @brief       Put radio in idle mode (receiver if off).  No harm is done this function is
- *              called when radio is already idle.
- *
- * @param       none
- *
- * @return      none
- **************************************************************************************************
- */
-void MRFI_RxIdle(void)
-{
-  /* radio must be awake to move it to idle mode */
-  MRFI_ASSERT( mrfiRadioState != MRFI_RADIO_STATE_OFF );
-
-  /* if radio is on, turn it off */
-  if(mrfiRadioState == MRFI_RADIO_STATE_RX)
-  {
-    Mrfi_RxModeOff();
-    mrfiRadioState = MRFI_RADIO_STATE_IDLE;
-  }
-}
-
-
-/**************************************************************************************************
- * @fn          MRFI_Sleep
- *
- * @brief       Request radio go to sleep.
- *
- * @param       none
- *
- * @return      none
- **************************************************************************************************
- */
-void MRFI_Sleep(void)
-{
-  bspIState_t s;
-
-  /* Critical section necessary for watertight testing and
-   * setting of state variables.
-   */
-  BSP_ENTER_CRITICAL_SECTION(s);
-
-  /* If radio is not asleep, put it to sleep */
-  if(mrfiRadioState != MRFI_RADIO_STATE_OFF)
-  {
-    /* go to idle so radio is in a known state before sleeping */
-    MRFI_RxIdle();
-
-    mrfiSpiCmdStrobe( SPWD );
-
-    /* Our new state is OFF */
-    mrfiRadioState = MRFI_RADIO_STATE_OFF;
-  }
-
-  BSP_EXIT_CRITICAL_SECTION(s);
-}
-
-
-/**************************************************************************************************
- * @fn          MRFI_WakeUp
- *
- * @brief       Wake up radio from sleep state.
- *
- * @param       none
- *
- * @return      none
- **************************************************************************************************
- */
-void MRFI_WakeUp(void)
-{
-  /* if radio is already awake, just ignore wakeup request */
-  if(mrfiRadioState != MRFI_RADIO_STATE_OFF)
-  {
-    return;
-  }
-
-  /* drive CSn low to initiate wakeup */
-  MRFI_SPI_DRIVE_CSN_LOW();
-
-  /* wait for MISO to go high indicating the oscillator is stable */
-  while (MRFI_SPI_SO_IS_HIGH());
-
-  /* wakeup is complete, drive CSn high and continue */
-  MRFI_SPI_DRIVE_CSN_HIGH();
-
-/*
- *  The test registers must be restored after sleep for the CC1100 and CC2500 radios.
- *  This is not required for the CC1101 radio.
- */
-#ifndef MRFI_CC1101
-  mrfiSpiWriteReg( TEST2, SMARTRF_SETTING_TEST2 );
-  mrfiSpiWriteReg( TEST1, SMARTRF_SETTING_TEST1 );
-  mrfiSpiWriteReg( TEST0, SMARTRF_SETTING_TEST0 );
-#endif
-
-  /* enter idle mode */
-  mrfiRadioState = MRFI_RADIO_STATE_IDLE;
-  MRFI_STROBE_IDLE_AND_WAIT();
-
-#ifdef MRFI_TIMER_ALWAYS_ACTIVE
-  stx_active = false; // indicate we're not in transmit
-#endif // MRFI_TIMER_ALWAYS_ACTIVE
-}
-
 
 /**************************************************************************************************
  * @fn          MRFI_GpioIsr

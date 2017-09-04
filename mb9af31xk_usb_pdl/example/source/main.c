@@ -124,6 +124,8 @@ int main(void)
 		UsbDeviceCdcCom_SetEchomode(TRUE); // all input shall be echoed
 
 		MRFI_Init();
+	   
+	  Mrfi_RxModeOn();
 	
     for(;;)
     {
