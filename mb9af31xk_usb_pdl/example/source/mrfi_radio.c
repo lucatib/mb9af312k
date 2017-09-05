@@ -663,7 +663,10 @@ void Mrfi_RxModeOn(void){
 	mrfiRadioState = MRFI_RADIO_STATE_RX;
 }
 
-void Mrfi_TxModeOn(void){
+void MRFI_TxOn(void){
+	/* radio must be awake to transmit */
+  MRFI_ASSERT( mrfiRadioState != MRFI_RADIO_STATE_OFF );
+	
 	if (mrfiRadioState != MRFI_RADIO_STATE_IDLE) {	
 		MRFI_STROBE_IDLE_AND_WAIT();
 		mrfiRadioState = MRFI_RADIO_STATE_IDLE;
@@ -813,10 +816,59 @@ void MRFI_WakeUp(void)
 #endif // MRFI_TIMER_ALWAYS_ACTIVE
 }
 
+/**************************************************************************************************
+ * @fn          MRFI_RxOn
+ *
+ * @brief       Turn on the receiver.  No harm is done if this function is called when
+ *              receiver is already on.
+ *
+ * @param       none
+ *
+ * @return      none
+ **************************************************************************************************
+ */
+void MRFI_RxOn(void)
+{
+  /* radio must be awake before we can move it to RX state */
+  MRFI_ASSERT( mrfiRadioState != MRFI_RADIO_STATE_OFF );
 
-
+  /* if radio is off, turn it on */
+  if(mrfiRadioState != MRFI_RADIO_STATE_RX)
+  {
+    mrfiRadioState = MRFI_RADIO_STATE_RX;
+    Mrfi_RxModeOn();
+  }
+}
 
 #if 0
+
+/**************************************************************************************************
+ * @fn          Mrfi_RxModeOn
+ *
+ * @brief       Put radio into receive mode.
+ *
+ * @param       none
+ *
+ * @return      none
+ **************************************************************************************************
+ */
+void Mrfi_RxModeOn(void){
+  //Setup hw receiver before anything else..
+  MRFI_POWER_RX_MODE();
+
+  /* clear any residual receive interrupt */
+  MRFI_CLEAR_SYNC_PIN_INT_FLAG();
+
+  /* send strobe to enter receive mode */
+  mrfiSpiCmdStrobe( SRX );
+
+  /* enable receive interrupts */
+  MRFI_ENABLE_SYNC_PIN_INT();
+
+#ifdef MRFI_TIMER_ALWAYS_ACTIVE
+  stx_active = false; // indicate we're not in transmit
+#endif // MRFI_TIMER_ALWAYS_ACTIVE
+}
 
 /**************************************************************************************************
  * @fn          MRFI_PrepareToTx
@@ -1410,57 +1462,7 @@ exit:
    */
 }
 
-/**************************************************************************************************
- * @fn          Mrfi_RxModeOn
- *
- * @brief       Put radio into receive mode.
- *
- * @param       none
- *
- * @return      none
- **************************************************************************************************
- */
-void Mrfi_RxModeOn(void){
-  //Setup hw receiver before anything else..
-  MRFI_POWER_RX_MODE();
 
-  /* clear any residual receive interrupt */
-  MRFI_CLEAR_SYNC_PIN_INT_FLAG();
-
-  /* send strobe to enter receive mode */
-  mrfiSpiCmdStrobe( SRX );
-
-  /* enable receive interrupts */
-  MRFI_ENABLE_SYNC_PIN_INT();
-
-#ifdef MRFI_TIMER_ALWAYS_ACTIVE
-  stx_active = false; // indicate we're not in transmit
-#endif // MRFI_TIMER_ALWAYS_ACTIVE
-}
-
-/**************************************************************************************************
- * @fn          MRFI_RxOn
- *
- * @brief       Turn on the receiver.  No harm is done if this function is called when
- *              receiver is already on.
- *
- * @param       none
- *
- * @return      none
- **************************************************************************************************
- */
-void MRFI_RxOn(void)
-{
-  /* radio must be awake before we can move it to RX state */
-  MRFI_ASSERT( mrfiRadioState != MRFI_RADIO_STATE_OFF );
-
-  /* if radio is off, turn it on */
-  if(mrfiRadioState != MRFI_RADIO_STATE_RX)
-  {
-    mrfiRadioState = MRFI_RADIO_STATE_RX;
-    Mrfi_RxModeOn();
-  }
-}
 
 /**************************************************************************************************
  * @fn          MRFI_GpioIsr

@@ -85,6 +85,7 @@
 #endif 
 /* End of includes for USB */
 
+#include "mrfi_board_defs.h"
 #include "mrfi.h"
 
 /*****************************************************************************/
@@ -110,6 +111,65 @@
  boolean_t bDeviceCdcComConnected;
 /*      END GLOBAL VARIABLES FOR VIRTUAL COM PORT EXAMPLE        */
 
+
+//
+static uint8_t 	manchester_cnt;
+static uint8_t 	bitcount;
+static uint8_t 	mbit;
+
+static uint8_t* ptrbuffer;
+static uint8_t 	ucTxLen;
+
+void prepare_tx(uint8_t* txpacket,uint8_t pktLen){
+		bitcount=0;
+		mbit=0;
+		manchester_cnt=0;
+		ptrbuffer = txpacket;
+		ucTxLen = pktLen;
+}
+
+//1,5 msec bit period -> DT = 1/3 0,5msec
+boolean_t manchester_tx(void){
+		if (!manchester_cnt){
+				mbit = (*ptrbuffer) & (0x80 >> bitcount);
+				
+				//Next bit
+				bitcount++;
+				if (bitcount&0x08){
+						bitcount=0;
+						if (ucTxLen){
+								ucTxLen--;
+								ptrbuffer++;
+						}
+						else{
+								//Fine Tx!!
+								MRFI_GDO0_DRIVE_HIGH();
+								return TRUE;
+						}
+				}
+				
+				//manchester primo 1/3
+				MRFI_GDO0_DRIVE_HIGH();
+				manchester_cnt=2;
+		}
+		else if (manchester_cnt==2){
+				//manchester secondo 1/3
+				if (mbit){
+						MRFI_GDO0_DRIVE_HIGH();
+				}
+				else{
+						MRFI_GDO0_DRIVE_LOW();
+				}
+				manchester_cnt--;
+		}	
+		else if (manchester_cnt==1){
+				//manchester terzo 1/3
+				MRFI_GDO0_DRIVE_LOW();
+				manchester_cnt--;
+		}
+		return FALSE;
+}
+
 /**
  ******************************************************************************
  ** \brief  Main function
@@ -124,9 +184,12 @@ int main(void)
 		UsbDeviceCdcCom_SetEchomode(TRUE); // all input shall be echoed
 
 		MRFI_Init();
-	   
-	  Mrfi_RxModeOn();
-	
+		//
+	  MRFI_RxOn();
+		//
+		//MRFI_TxOn();
+		
+		//
     for(;;)
     {
 			

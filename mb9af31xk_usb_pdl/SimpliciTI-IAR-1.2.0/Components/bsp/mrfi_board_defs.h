@@ -191,11 +191,6 @@ void __inline MRFI_CONFIG_GDO2_FALLING_EDGE_INT(void){}
 																										)
 																										
 //#define MRFI_SPI_READ_BYTE()											FM3_MFS3_CSIO->RDR
-//#define MRFI_SPI_WAIT_DONETX() 										  st(while(1) {	\
-//																													if (((FM3_MFS3_CSIO->SSR & SSR_TDRE) !=0) && \
-//																															((FM3_MFS3_CSIO->SSR & SSR_TBI) != 0)) 	\
-//																														break;}\
-//																										)
 
 #define MRFI_SPI_WAIT_DONETX()											st(																													\
 																												while(TRUE != Mfs_Csio_GetStatus(CsioCh0, CsioTxIdle));	\
@@ -206,8 +201,8 @@ void __inline MRFI_CONFIG_GDO2_FALLING_EDGE_INT(void){}
 //#define MRFI_SPI_PURGERX()												st(int dummy;while((FM3_MFS3_CSIO->SSR & (SSR_RDRF)) != 0) dummy = FM3_MFS3_CSIO->RDR;)
 
 /* initialization */	 	
-#define MRFI_SPI_INIT()									CsioMasterInit();							        
-#define MRFI_SPI_DEINIT() 	   					//
+#define MRFI_SPI_INIT()															CsioMasterInit();							        
+#define MRFI_SPI_DEINIT() 	   											//
 
 /* SPI critical section macros */
 typedef bspIState_t mrfiSpiIState_t;

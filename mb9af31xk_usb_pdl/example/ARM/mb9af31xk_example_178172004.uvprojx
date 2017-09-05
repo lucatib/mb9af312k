@@ -336,7 +336,7 @@
               <MiscControls></MiscControls>
               <Define>__CORE_FM3__</Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\common;..\..\example\source;..\..\example\source\config;..\..\library;..\..\library\lowlevel;..\..\library\middleware;..\..\library\highlevel;..\source\sk-fm3-48pmc-usbstick;..\source\config\usb;..\..\library\lowlevel\usb;..\..\library\middleware\usb\host;..\..\library\middleware\usb\device;..\..\driver;..\..\SimpliciTI-IAR-1.2.0\Components\bsp;..\..\SimpliciTI-IAR-1.2.0\Components\application\p2p;..\..\SimpliciTI-IAR-1.2.0\Components\mrfi\radios\family1;..\..\SimpliciTI-IAR-1.2.0\Components\mrfi;..\..\SimpliciTI-IAR-1.2.0\Components\simpliciti\nwk_applications;..\..\SimpliciTI-IAR-1.2.0\Components\simpliciti\nwk</IncludePath>
+              <IncludePath>..\..\common;..\..\example\source;..\..\example\source\config;..\..\library;..\..\library\lowlevel;..\..\library\middleware;..\..\library\highlevel;..\source\sk-fm3-48pmc-usbstick;..\source\config\usb;..\..\library\lowlevel\usb;..\..\library\middleware\usb\host;..\..\library\middleware\usb\device;..\..\driver;..\..\SimpliciTI-IAR-1.2.0\Components\bsp;..\..\SimpliciTI-IAR-1.2.0\Components\application\p2p;..\..\SimpliciTI-IAR-1.2.0\Components\mrfi;..\..\SimpliciTI-IAR-1.2.0\Components\mrfi\radios\family1;..\..\SimpliciTI-IAR-1.2.0\Components\simpliciti\nwk_applications;..\..\SimpliciTI-IAR-1.2.0\Components\simpliciti\nwk</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
